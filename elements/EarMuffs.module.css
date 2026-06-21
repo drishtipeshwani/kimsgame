@@ -1,0 +1,103 @@
+.wrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- SOFT GROUND SHADOW --- */
+.shadow {
+  position: absolute;
+  bottom: 2px;
+  left: 6px;
+  width: 36px;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  filter: blur(1.5px);
+  z-index: 0;
+}
+
+/* --- METALLIC & TEXTURED HEADBAND --- */
+.headband {
+  position: absolute;
+  top: 4px;
+  left: 8px;
+  width: 32px;
+  height: 32px;
+  border: 3.5px solid #ff4081; /* Pink leather/fabric band base */
+  border-bottom: none;
+  border-radius: 18px 18px 0 0;
+  box-shadow: 
+    inset 0 1px 1px rgba(255, 255, 255, 0.4),
+    0 1px 2px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+/* --- METALLIC CONNECTORS --- */
+.connectorLeft,
+.connectorRight {
+  position: absolute;
+  width: 3px;
+  height: 10px;
+  background: linear-gradient(to right, #cfd8dc, #eceff1, #90a4ae);
+  border-radius: 1px;
+  z-index: 2;
+  bottom: 16px;
+}
+
+.connectorLeft {
+  left: 7px;
+  transform: rotate(-10deg);
+}
+
+.connectorRight {
+  right: 7px;
+  transform: rotate(10deg);
+}
+
+/* --- FLUFFY MUFFS --- */
+.muffLeft,
+.muffRight {
+  position: absolute;
+  width: 17px;
+  height: 20px;
+  bottom: 4px;
+  /* Pastel-to-vibrant pink fluffy gradient texture */
+  background: radial-gradient(circle, #ff80ab 30%, #ff4081 70%, #f50057 100%);
+  border-radius: 50% 45% 45% 50%;
+  /* Layered shadows to simulate fuzzy, soft fiber edges */
+  box-shadow: 
+    0 0 0 1px rgba(255, 64, 129, 0.3),
+    0 1px 3px rgba(0, 0, 0, 0.2),
+    inset 0 2px 4px rgba(255, 255, 255, 0.6),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.15);
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.muffLeft {
+  left: 2px;
+  transform: rotate(12deg);
+}
+
+.muffRight {
+  right: 2px;
+  transform: rotate(-12deg);
+}
+
+/* --- INNER PLUSH CENTER --- */
+.muffInner {
+  width: 11px;
+  height: 14px;
+  background: radial-gradient(circle, #fff 10%, #f8bbd0 80%, #ff80ab 100%);
+  border-radius: 50%;
+  box-shadow: 
+    inset 0 1px 3px rgba(0,0,0,0.1),
+    0 1px 1px rgba(255, 255, 255, 0.5);
+  opacity: 0.95;
+}

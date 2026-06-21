@@ -1,0 +1,151 @@
+.bookWrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- DROP SHADOW --- */
+.shadow {
+  position: absolute;
+  bottom: 5px;
+  left: 3px;
+  width: 42px;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  filter: blur(2px);
+  z-index: 0;
+}
+
+/* --- BOOKMARK RIBBON --- */
+.ribbon {
+  position: absolute;
+  bottom: 4px;
+  left: calc(50% - 2.5px);
+  width: 5px;
+  height: 10px;
+  background: linear-gradient(to right, #d32f2f, #b71c1c);
+  border-radius: 0 0 1px 1px;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 80%, 0% 100%);
+  z-index: 1;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* --- HARDBACK COVER --- */
+.cover {
+  position: absolute;
+  top: 10px;
+  left: 3px;
+  width: 42px;
+  height: 29px;
+  background: linear-gradient(135deg, #7b1fa2 0%, #4a148c 100%); /* Majestic Royal Purple */
+  border-radius: 3px;
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.2),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+/* --- PAGE STACKS (Creates 3D paper depth underneath) --- */
+.pageStackLeft,
+.pageStackRight {
+  position: absolute;
+  top: 11px;
+  height: 26px;
+  background: #e0d8cd;
+  z-index: 3;
+}
+
+.pageStackLeft {
+  left: 4px;
+  width: 19px;
+  border-radius: 2px 0 0 2px;
+  box-shadow:
+    1px 1px 0px #fff,
+    1px 2px 0px #d7ccc8;
+}
+
+.pageStackRight {
+  right: 4px;
+  width: 19px;
+  border-radius: 0 2px 2px 0;
+  box-shadow:
+    -1px 1px 0px #fff,
+    -1px 2px 0px #d7ccc8;
+}
+
+/* --- LEFT ACTIVE PAGE --- */
+.pageLeft {
+  position: absolute;
+  top: 11px;
+  left: 5px;
+  width: 18.5px;
+  height: 25px;
+  background: linear-gradient(to right, #fafafa 15%, #f5ece1 85%, #dcd0bf 100%);
+  border-radius: 2px 1px 1px 2px;
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.8);
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.5px;
+  padding-left: 3px;
+  padding-right: 2px;
+  box-sizing: border-box;
+}
+
+/* --- RIGHT ACTIVE PAGE --- */
+.pageRight {
+  position: absolute;
+  top: 11px;
+  right: 5px;
+  width: 18.5px;
+  height: 25px;
+  background: linear-gradient(to left, #fafafa 15%, #f5ece1 85%, #dcd0bf 100%);
+  border-radius: 1px 2px 2px 1px;
+  box-shadow: inset -1px 1px 0 rgba(255, 255, 255, 0.8);
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.5px;
+  padding-left: 2px;
+  padding-right: 3px;
+  box-sizing: border-box;
+}
+
+/* --- SPINE CREASE SHADOW --- */
+.spineCrease {
+  position: absolute;
+  top: 11px;
+  left: calc(50% - 1px);
+  width: 2px;
+  height: 25px;
+  background: linear-gradient(to right, rgba(0,0,0,0.3), rgba(0,0,0,0.05) 50%, rgba(0,0,0,0.3));
+  z-index: 5;
+}
+
+/* --- SIMULATED TEXT LINES --- */
+.textLineShort,
+.textLineMedium,
+.textLineLong {
+  height: 1.5px;
+  background: rgba(93, 64, 55, 0.35); /* Soft sepia ink tone */
+  border-radius: 0.5px;
+}
+
+.textLineShort {
+  width: 50%;
+}
+
+.textLineMedium {
+  width: 75%;
+}
+
+.textLineLong {
+  width: 90%;
+}

@@ -1,0 +1,166 @@
+.wrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- GROUND SHADOW --- */
+.shadow {
+  position: absolute;
+  bottom: 2px;
+  left: 4px;
+  width: 40px;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 50%;
+  filter: blur(2px);
+  z-index: 0;
+}
+
+/* --- FLIP FLOP CONTAINER --- */
+.flipFlop {
+  position: absolute;
+  width: 15px;
+  height: 33px;
+  z-index: 1;
+}
+
+.left {
+  left: 7px;
+  top: 6px;
+  transform: rotate(-10deg);
+}
+
+.right {
+  right: 7px;
+  top: 8px;
+  transform: rotate(8deg);
+}
+
+/* --- SOLES (FOOT-SHAPED) --- */
+.sole {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* Layered foam edges: top highlight, foam middle layer, dark bottom layer */
+  box-shadow: 
+    inset 0 1px 1px rgba(255, 255, 255, 0.4),
+    0 1px 0 #007c91,
+    0 2px 0 #004d40,
+    1px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.soleLeft {
+  background: linear-gradient(135deg, #00bfa5, #00e5ff);
+  border-radius: 55% 45% 42% 48% / 30% 25% 70% 70%;
+}
+
+.soleRight {
+  background: linear-gradient(135deg, #00bfa5, #00e5ff);
+  border-radius: 45% 55% 48% 42% / 25% 30% 70% 70%;
+}
+
+/* Cute subtle tropical stripe pattern on soles */
+.stripePattern {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 3px,
+    rgba(255, 255, 255, 0.25) 3px,
+    rgba(255, 255, 255, 0.25) 5px
+  );
+  opacity: 0.9;
+}
+
+/* Inner rim border line */
+.innerRim {
+  position: absolute;
+  inset: 1.5px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  pointer-events: none;
+}
+
+.soleLeft .innerRim {
+  border-radius: 55% 45% 42% 48% / 30% 25% 70% 70%;
+}
+
+.soleRight .innerRim {
+  border-radius: 45% 55% 48% 42% / 25% 30% 70% 70%;
+}
+
+/* --- STRAPS --- */
+.strap {
+  position: absolute;
+  background: #ff4081; /* High-contrast neon pink/coral */
+  border-radius: 1.5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+/* Left Flip Flop Straps */
+/* Outer strap starts lower down the lateral side */
+.strapLeftOuter {
+  width: 2.5px;
+  height: 12px;
+  top: 7px;
+  left: 2px;
+  transform: rotate(-38deg);
+  transform-origin: top left;
+}
+
+/* Inner strap starts slightly higher on the medial side */
+.strapLeftInner {
+  width: 2.5px;
+  height: 10px;
+  top: 7px;
+  right: 2px;
+  transform: rotate(45deg);
+  transform-origin: top right;
+}
+
+/* Right Flip Flop Straps */
+.strapRightInner {
+  width: 2.5px;
+  height: 10px;
+  top: 7px;
+  left: 2px;
+  transform: rotate(-45deg);
+  transform-origin: top left;
+}
+
+.strapRightOuter {
+  width: 2.5px;
+  height: 12px;
+  top: 7px;
+  right: 2px;
+  transform: rotate(38deg);
+  transform-origin: top right;
+}
+
+/* --- TOE PLUG / POST --- */
+.toePost {
+  position: absolute;
+  width: 3.5px;
+  height: 3.5px;
+  background: #ff1744;
+  border-radius: 50%;
+  box-shadow: inset 0 0 1px rgba(0,0,0,0.5), 0 1px 1px rgba(0,0,0,0.15);
+  z-index: 3;
+}
+
+/* Slightly offset towards the big toe (inwards) */
+.toePostLeft {
+  top: 5.5px;
+  left: 7.5px;
+}
+
+.toePostRight {
+  top: 5.5px;
+  right: 7.5px;
+}

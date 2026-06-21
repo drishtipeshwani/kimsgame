@@ -1,0 +1,160 @@
+.lemonsWrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- DROP SHADOW --- */
+.shadow {
+  position: absolute;
+  bottom: 3px;
+  left: 5px;
+  width: 36px;
+  height: 6px;
+  background: rgba(107, 85, 20, 0.28);
+  border-radius: 50%;
+  filter: blur(2px);
+  z-index: 0;
+}
+
+/* --- FRESH GREEN LEAF --- */
+.leaf {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 14px;
+  height: 9px;
+  background: linear-gradient(135deg, #4caf50 10%, #1b5e20 90%);
+  border-radius: 0 100% 0 100%;
+  transform: rotate(-10deg);
+  box-shadow: inset 1px -1px 2px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* --- WHOLE LEMON (BACKGROUND) --- */
+.wholeLemon {
+  position: absolute;
+  left: 6px;
+  top: 12px;
+  width: 28px;
+  height: 21px;
+  background: radial-gradient(circle at 35% 35%, #fff59d 0%, #fbc02d 65%, #f57f17 100%);
+  border-radius: 50% 65% 50% 65%;
+  transform: rotate(-18deg);
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* Subtle skin texture on whole lemon */
+.lemonHighlight {
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  width: 12px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
+/* Realistic nodes (ends) of the whole lemon */
+.nodeLeft {
+  position: absolute;
+  left: -1px;
+  top: 9px;
+  width: 3px;
+  height: 3px;
+  background: #afb42b;
+  border-radius: 50%;
+}
+.nodeRight {
+  position: absolute;
+  right: -1px;
+  top: 9px;
+  width: 3px;
+  height: 3px;
+  background: #f57f17;
+  border-radius: 50%;
+}
+
+/* --- LEMON SLICE (FOREGROUND) --- */
+.sliceRind {
+  position: absolute;
+  right: 4px;
+  bottom: 5px;
+  width: 25px;
+  height: 25px;
+  background: linear-gradient(135deg, #fdd835 0%, #fbc02d 100%);
+  border-radius: 50%;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.22), inset -1px -1px 2px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.slicePith {
+  width: 22px;
+  height: 22px;
+  background: #fffdf0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Conic gradient models the lemon segments flawlessly */
+.slicePulp {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    #fffdf0 0deg 3deg,
+    #fdd835 3deg 57deg,
+    #fffdf0 57deg 63deg,
+    #fdd835 63deg 117deg,
+    #fffdf0 117deg 123deg,
+    #fdd835 123deg 177deg,
+    #fffdf0 177deg 183deg,
+    #fdd835 183deg 237deg,
+    #fffdf0 237deg 243deg,
+    #fdd835 243deg 297deg,
+    #fffdf0 297deg 303deg,
+    #fdd835 303deg 357deg,
+    #fffdf0 357deg 360deg
+  );
+  box-shadow: inset 0 0 3px rgba(245, 127, 23, 0.5);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* White juicy core of the slice */
+.core {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #fffdf0;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+/* Glistening wet reflection across the pulp */
+.glint {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 60%);
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+}

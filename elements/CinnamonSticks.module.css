@@ -1,0 +1,151 @@
+.canvas {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* --- GROUND SHADOW --- */
+.groundShadow {
+  position: absolute;
+  bottom: 4px;
+  left: 6px;
+  width: 36px;
+  height: 8px;
+  background: rgba(43, 24, 9, 0.4);
+  border-radius: 50%;
+  filter: blur(2px);
+  z-index: 1;
+}
+
+/* --- GENERAL STICK CONTAINER --- */
+.stick {
+  position: absolute;
+  width: 10px;
+  height: 38px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- BACK STICK (Angled Left) --- */
+.stickBack {
+  top: 4px;
+  left: 14px;
+  transform: rotate(-24deg);
+  z-index: 2;
+}
+
+/* --- FRONT STICK (Angled Right, overlapping) --- */
+.stickFront {
+  top: 5px;
+  left: 22px;
+  transform: rotate(18deg);
+  z-index: 4;
+}
+
+/* Shadow cast from Stick Front onto Stick Back */
+.castShadow {
+  position: absolute;
+  left: -8px;
+  top: 6px;
+  width: 10px;
+  height: 32px;
+  background: rgba(0, 0, 0, 0.35);
+  filter: blur(1.5px);
+  transform: rotate(-10deg);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* --- THE CYLINDRICAL BARK BODY --- */
+.barkBody {
+  position: absolute;
+  top: 2px;
+  width: 100%;
+  height: 34px;
+  /* Cylindrical gradient shading to give a 3D rounded look */
+  background: linear-gradient(
+    to right,
+    #3e2723 0%,
+    #4e342e 20%,
+    #6d4c41 50%,
+    #4e342e 80%,
+    #2d1500 100%
+  );
+  border-radius: 1px;
+  box-shadow: inset -1px 0 2px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+/* Bark texture details */
+.textureLine1 {
+  position: absolute;
+  left: 2px;
+  top: 4px;
+  width: 1px;
+  height: 24px;
+  background: rgba(45, 21, 0, 0.6);
+}
+
+.textureLine2 {
+  position: absolute;
+  right: 3px;
+  top: 8px;
+  width: 1px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* --- SPIRAL ROLLED ENDS --- */
+/* The top opening showing the hollow inner roll */
+.topRoll {
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 5px;
+  background: #2d1500;
+  border: 1px solid #4e342e;
+  border-radius: 50%;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Simulating spiral concentric bark layers */
+.spiral1 {
+  position: absolute;
+  width: 7px;
+  height: 3px;
+  border-radius: 50%;
+  border: 1px solid #8d6e63;
+  border-bottom: none;
+  transform: rotate(-10deg);
+}
+
+.spiral2 {
+  position: absolute;
+  width: 4px;
+  height: 2px;
+  border-radius: 50%;
+  border: 1px solid #5d4037;
+  border-top: none;
+  transform: rotate(15deg);
+}
+
+/* Bottom dark edge */
+.bottomRoll {
+  position: absolute;
+  bottom: 0;
+  width: 10px;
+  height: 4px;
+  background: #2d1500;
+  border-radius: 50%;
+  box-shadow: inset 0 -1px 2px rgba(0, 0, 0, 0.8);
+  z-index: 5;
+}

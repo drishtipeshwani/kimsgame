@@ -1,0 +1,152 @@
+.beanieWrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- SOFT GROUND SHADOW --- */
+.shadow {
+  position: absolute;
+  top: 41px;
+  left: 9px;
+  width: 30px;
+  height: 5px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  filter: blur(1.5px);
+  z-index: 0;
+}
+
+/* --- THE POM-POM --- */
+.pompom {
+  position: absolute;
+  top: 3px;
+  left: 18px;
+  width: 12px;
+  height: 12px;
+  z-index: 1;
+}
+
+.pomFluff1 {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #f5f5f5 55%, #e0e0e0 100%);
+  border-radius: 50%;
+  box-shadow: 
+    1px 1px 2px rgba(0, 0, 0, 0.1),
+    -1px -1px 1px rgba(255, 255, 255, 0.8) inset;
+}
+
+.pomFluff2 {
+  position: absolute;
+  inset: 1px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 
+    0 -2px 2px -1px #ffffff,
+    2px 0 2px -1px #e0e0e0,
+    -2px 1px 2px -1px #d6d6d6,
+    1px 2px 2px -1px #bdbdbd;
+  filter: blur(0.5px);
+}
+
+/* --- MAIN KNITTED CROWN --- */
+.crown {
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  width: 28px;
+  height: 23px;
+  background: linear-gradient(135deg, #ff8a80 0%, #e53935 45%, #c62828 85%, #b71c1c 100%);
+  border-radius: 50% 50% 20% 20% / 65% 65% 15% 15%;
+  box-shadow: 
+    inset -2px -2px 4px rgba(0, 0, 0, 0.35),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.45),
+    0 2px 4px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+  overflow: hidden;
+}
+
+.crownPattern {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 4px,
+    rgba(0, 0, 0, 0.08) 4px,
+    rgba(0, 0, 0, 0.08) 6px,
+    rgba(255, 255, 255, 0.05) 6px,
+    rgba(255, 255, 255, 0.05) 7px
+  );
+  opacity: 0.85;
+}
+
+/* --- COZY RIBBED BRIM --- */
+.brim {
+  position: absolute;
+  top: 31px;
+  left: 7px;
+  width: 34px;
+  height: 12px;
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.12) 0px,
+      rgba(255, 255, 255, 0.12) 2px,
+      transparent 2px,
+      transparent 4px,
+      rgba(0, 0, 0, 0.18) 4px,
+      rgba(0, 0, 0, 0.18) 6px
+    ),
+    linear-gradient(to right, #b71c1c 0%, #d32f2f 20%, #ef5350 50%, #d32f2f 80%, #b71c1c 100%);
+  border-radius: 3.5px;
+  box-shadow: 
+    0 3px 4px rgba(0, 0, 0, 0.2),
+    inset 0 1px 1px rgba(255, 255, 255, 0.5),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- BRAND LEATHER PATCH --- */
+.patch {
+  width: 8px;
+  height: 6px;
+  background: #a1887f;
+  border: 0.5px solid #5d4037;
+  border-radius: 1px;
+  box-shadow: 
+    0 1px 1px rgba(0, 0, 0, 0.15),
+    inset 0 0.5px 0.5px rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+.patch::before,
+.patch::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  width: 0.5px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #4e342e 0px,
+    #4e342e 1px,
+    transparent 1px,
+    transparent 2px
+  );
+}
+
+.patch::before {
+  left: 0.5px;
+}
+
+.patch::after {
+  right: 0.5px;
+}

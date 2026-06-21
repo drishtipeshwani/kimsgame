@@ -1,0 +1,149 @@
+.sweaterWrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- DROP SHADOW --- */
+.shadow {
+  position: absolute;
+  bottom: 2px;
+  left: 6px;
+  width: 36px;
+  height: 5px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  filter: blur(1.5px);
+  z-index: 0;
+}
+
+/* --- THE COLLAR --- */
+.collar {
+  position: absolute;
+  top: 7px;
+  left: 17px;
+  width: 14px;
+  height: 6px;
+  background: #fffdf0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 1px,
+    #e0dcb8 2px
+  );
+  border-radius: 3px 3px 6px 6px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15), inset 0 -1px 2px rgba(0,0,0,0.1);
+  z-index: 4;
+}
+
+/* --- MAIN BODY --- */
+.body {
+  position: absolute;
+  top: 12px;
+  left: 11px;
+  width: 26px;
+  height: 25px;
+  /* Cozy red gradients with subtle shadow depth */
+  background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+  border-radius: 4px 4px 6px 6px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), inset 1px 1px 3px rgba(255, 255, 255, 0.25);
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* --- COZY CHEST PATTERN --- */
+.patternBand {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 100%;
+  height: 7px;
+  background: #fffdf0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Miniature green tree/diamond detail in center of the chest band */
+.patternDetail {
+  width: 5px;
+  height: 5px;
+  background: #2e7d32;
+  transform: rotate(45deg);
+  position: relative;
+}
+.patternDetail::before, .patternDetail::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #d32f2f;
+  border-radius: 50%;
+}
+.patternDetail::before { left: -4px; top: 1px; }
+.patternDetail::after { right: -4px; top: 1px; }
+
+/* --- BOTTOM HEM --- */
+.hem {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #fffdf0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 1px,
+    #e0dcb8 2px
+  );
+  border-radius: 0 0 4px 4px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
+}
+
+/* --- SLEEVES --- */
+.sleeveLeft,
+.sleeveRight {
+  position: absolute;
+  top: 12px;
+  width: 8px;
+  height: 22px;
+  background: linear-gradient(to bottom, #d32f2f, #9e1a1a);
+  z-index: 1;
+  box-shadow: 1px 2px 4px rgba(0,0,0,0.15);
+}
+
+.sleeveLeft {
+  left: 4px;
+  border-radius: 5px 2px 3px 4px;
+  transform: rotate(18deg);
+  transform-origin: top right;
+}
+
+.sleeveRight {
+  right: 4px;
+  border-radius: 2px 5px 4px 3px;
+  transform: rotate(-18deg);
+  transform-origin: top left;
+}
+
+/* --- SLEEVE CUFFS --- */
+.cuff {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #fffdf0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 1px,
+    #e0dcb8 2px
+  );
+  border-radius: 0 0 2px 2px;
+}

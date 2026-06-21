@@ -1,0 +1,121 @@
+.canvas {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ambient drop shadow under the tent */
+.groundShadow {
+  position: absolute;
+  bottom: 3px;
+  left: 3px;
+  width: 42px;
+  height: 6px;
+  background: rgba(40, 25, 10, 0.4);
+  border-radius: 50%;
+  filter: blur(1.5px);
+  z-index: 0;
+}
+
+/* Thin metallic corner pegs/poles */
+.pegLeft,
+.pegRight {
+  position: absolute;
+  bottom: 5px;
+  width: 2px;
+  height: 8px;
+  background: linear-gradient(to right, #cfd8dc, #b0bec5, #78909c);
+  border-radius: 1px;
+  z-index: 1;
+}
+
+.pegLeft {
+  left: 4px;
+  transform: rotate(-35deg);
+}
+
+.pegRight {
+  right: 4px;
+  transform: rotate(35deg);
+}
+
+/* Main tent frame wrapper */
+.tentBody {
+  position: absolute;
+  bottom: 6px;
+  width: 38px;
+  height: 32px;
+  z-index: 2;
+}
+
+/* Triangular outer fabric shell */
+.outerShell {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #ff5722 0%, #f4511e 60%, #bf360c 100%);
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  box-shadow: inset 0 -4px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark triangular entrance opening */
+.interior {
+  position: absolute;
+  bottom: 0;
+  left: 8px;
+  width: 22px;
+  height: 22px;
+  background: #110702;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  z-index: 3;
+}
+
+/* Gradient representing depth inside the tent */
+.interiorShadow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, transparent 20%, rgba(0, 0, 0, 0.95) 90%);
+}
+
+/* Left rolled-back nylon flap */
+.flapLeft {
+  position: absolute;
+  bottom: 0;
+  left: 8px;
+  width: 11px;
+  height: 22px;
+  background: linear-gradient(135deg, #ffb74d 0%, #ff9800 70%, #f57c00 100%);
+  clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+  transform: rotate(-4deg);
+  transform-origin: top right;
+  z-index: 4;
+  filter: drop-shadow(-1px 1px 1px rgba(0, 0, 0, 0.3));
+}
+
+/* Right rolled-back nylon flap */
+.flapRight {
+  position: absolute;
+  bottom: 0;
+  right: 8px;
+  width: 11px;
+  height: 22px;
+  background: linear-gradient(225deg, #ffa726 0%, #fb8c00 70%, #ef6c00 100%);
+  clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+  transform: rotate(4deg);
+  transform-origin: top left;
+  z-index: 4;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+}
+
+/* Vertical center seam on the tent body */
+.centerSeam {
+  position: absolute;
+  top: 0;
+  left: 18.5px;
+  width: 1px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.45);
+  z-index: 5;
+}

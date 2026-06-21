@@ -1,0 +1,195 @@
+.icecreamWrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Soft shadow below cone tip */
+.shadow {
+  position: absolute;
+  bottom: 1px;
+  left: 20px;
+  width: 8px;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  filter: blur(1px);
+  z-index: 1;
+}
+
+/* Cone with waffle texture */
+.cone {
+  position: absolute;
+  bottom: 3px;
+  left: 14px;
+  width: 20px;
+  height: 23px;
+  background: #ffb74d;
+  background-image:
+    linear-gradient(135deg, rgba(0,0,0,0.1) 25%, transparent 25%),
+    linear-gradient(225deg, rgba(0,0,0,0.1) 25%, transparent 25%),
+    linear-gradient(45deg, rgba(255,255,255,0.15) 25%, transparent 25%),
+    linear-gradient(315deg, rgba(255,255,255,0.15) 25%, transparent 25%);
+  background-size: 5px 5px;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  z-index: 2;
+}
+
+/* Cone inner shadow overlay for 3D depth */
+.coneShadow {
+  position: absolute;
+  bottom: 3px;
+  left: 14px;
+  width: 20px;
+  height: 23px;
+  background: linear-gradient(to right, rgba(0,0,0,0.2) 0%, transparent 40%, rgba(0,0,0,0.25) 100%);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Main Ice Cream Scoop */
+.scoop {
+  position: absolute;
+  top: 9px;
+  left: 13px;
+  width: 22px;
+  height: 21px;
+  background: radial-gradient(circle at 35% 35%, #ffb2dd 0%, #ff6fa9 55%, #d81b60 100%);
+  border-radius: 50% 50% 45% 45%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15), inset -1px -2px 3px rgba(0,0,0,0.2);
+  z-index: 4;
+}
+
+/* Fluffy bottom ruffles */
+.ruffleContainer {
+  position: absolute;
+  bottom: -2px;
+  left: -1px;
+  width: 24px;
+  height: 6px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ruffle {
+  width: 8px;
+  height: 6px;
+  background: #ff6fa9;
+  border-radius: 50%;
+  box-shadow: inset -1px -1px 2px rgba(0,0,0,0.15), 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.ruffle:nth-child(2) {
+  width: 9px;
+  height: 7px;
+  margin-top: -1px;
+  background: #ff5c9e;
+}
+
+/* Chocolate Syrup Cap */
+.syrup {
+  position: absolute;
+  top: 9px;
+  left: 13px;
+  width: 22px;
+  height: 11px;
+  background: #4e342e;
+  border-radius: 50% 50% 30% 30% / 70% 70% 30% 30%;
+  z-index: 5;
+  box-shadow: inset 1px 1px 1px rgba(255,255,255,0.25);
+}
+
+/* Chocolate Drips */
+.drip1, .drip2 {
+  position: absolute;
+  background: #4e342e;
+  border-radius: 0 0 50% 50%;
+  z-index: 5;
+}
+
+.drip1 {
+  top: 18px;
+  left: 16px;
+  width: 3px;
+  height: 6px;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.15);
+}
+
+.drip2 {
+  top: 19px;
+  left: 27px;
+  width: 2.5px;
+  height: 4px;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.15);
+}
+
+/* Cherry */
+.cherry {
+  position: absolute;
+  top: 4px;
+  left: 21px;
+  width: 7px;
+  height: 7px;
+  background: radial-gradient(circle at 35% 35%, #ff5252 0%, #d50000 60%, #880e4f 100%);
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  z-index: 6;
+}
+
+.cherryReflection {
+  position: absolute;
+  top: 1.5px;
+  left: 1.5px;
+  width: 2px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+}
+
+/* Cherry Stem */
+.stem {
+  position: absolute;
+  top: -4px;
+  left: 24px;
+  width: 6px;
+  height: 9px;
+  border-left: 1.2px solid #37474f;
+  border-top: 1.2px solid #37474f;
+  border-radius: 4px 0 0 0;
+  transform: rotate(15deg);
+  z-index: 5;
+}
+
+/* Colorful Sprinkles */
+.sprinkle1, .sprinkle2, .sprinkle3 {
+  position: absolute;
+  width: 3px;
+  height: 1.2px;
+  border-radius: 1px;
+  z-index: 6;
+}
+
+.sprinkle1 {
+  top: 13px;
+  left: 16px;
+  background: #ffeb3b;
+  transform: rotate(25deg);
+}
+
+.sprinkle2 {
+  top: 11px;
+  left: 26px;
+  background: #00e5ff;
+  transform: rotate(-35deg);
+}
+
+.sprinkle3 {
+  top: 15px;
+  left: 29px;
+  background: #76ff03;
+  transform: rotate(15deg);
+}

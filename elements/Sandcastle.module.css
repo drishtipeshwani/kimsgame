@@ -1,0 +1,170 @@
+.sandcastleWrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+
+/* --- SANDY GROUND MOUNDS --- */
+.sandMound {
+  position: absolute;
+  bottom: 0;
+  left: 2px;
+  width: 44px;
+  height: 10px;
+  background: radial-gradient(ellipse at top, #dfb074 0%, #c49459 100%);
+  border-radius: 50% 50% 0 0;
+  z-index: 1;
+}
+
+.sandMoundFront {
+  position: absolute;
+  bottom: -1px;
+  left: 6px;
+  width: 36px;
+  height: 6px;
+  background: radial-gradient(ellipse at top, #ffe0b2 0%, #dfb074 100%);
+  border-radius: 50% 50% 0 0;
+  filter: blur(0.5px);
+  z-index: 6;
+}
+
+/* --- CONNECTING WALLS --- */
+.connectingWall {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  width: 28px;
+  height: 11px;
+  background: linear-gradient(to right, #b5854c 0%, #dfb074 30%, #ffdca7 70%, #b5854c 100%);
+  border-radius: 1px 1px 0 0;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+/* --- TOWERS (LEFT & RIGHT) --- */
+.leftTower,
+.rightTower {
+  position: absolute;
+  bottom: 5px;
+  width: 7px;
+  height: 22px;
+  background: linear-gradient(to right, #9e7039 0%, #dfb074 40%, #ffe0b2 75%, #a87941 100%);
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+}
+
+.leftTower {
+  left: 7px;
+}
+
+.rightTower {
+  right: 7px;
+}
+
+/* --- CONICAL ROOFS --- */
+.leftRoof,
+.rightRoof {
+  position: absolute;
+  top: -8px;
+  left: -1px;
+  width: 0;
+  height: 0;
+  border-left: 4.5px solid transparent;
+  border-right: 4.5px solid transparent;
+  border-bottom: 8px solid #b5854c;
+  filter: drop-shadow(0px -1px 1px rgba(255,255,255,0.15));
+}
+
+/* Highlight/shadow on roofs */
+.leftRoof::after,
+.rightRoof::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -4.5px;
+  width: 0;
+  height: 0;
+  border-left: 4.5px solid transparent;
+  border-right: 0px solid transparent;
+  border-bottom: 8px solid #dfb074;
+}
+
+/* --- CENTRAL KEEP --- */
+.centerKeep {
+  position: absolute;
+  bottom: 5px;
+  left: 16px;
+  width: 16px;
+  height: 19px;
+  background: linear-gradient(to right, #b5854c 0%, #e2b378 35%, #ffdca7 75%, #a1723a 100%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  z-index: 4;
+  border-radius: 1px 1px 0 0;
+}
+
+/* --- BATTLEMENTS / CRENEALTIONS --- */
+.battlements {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  /* Pattern to create crenelations */
+  background-image: linear-gradient(to right, 
+    #b5854c 0%, #b5854c 25%, 
+    transparent 25%, transparent 37.5%, 
+    #dfb074 37.5%, #dfb074 62.5%, 
+    transparent 62.5%, transparent 75%, 
+    #a1723a 75%, #a1723a 100%
+  );
+}
+
+/* --- GATE / ENTRANCE --- */
+.gate {
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+  width: 6px;
+  height: 9px;
+  background: linear-gradient(to bottom, #2b1810, #42281d);
+  border-radius: 3px 3px 0 0;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.8), 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+/* --- WINDOW SLITS --- */
+.window {
+  position: absolute;
+  top: 6px;
+  left: 2.5px;
+  width: 2px;
+  height: 4px;
+  background: #42281d;
+  border-radius: 0.5px;
+}
+
+/* --- FLAGPOLE & FLAG --- */
+.flagpole {
+  position: absolute;
+  bottom: 24px;
+  left: 23.5px;
+  width: 1px;
+  height: 11px;
+  background: #5d4037;
+  z-index: 5;
+}
+
+.flag {
+  position: absolute;
+  top: 0;
+  left: 1px;
+  width: 5px;
+  height: 4px;
+  background: #e53935;
+  /* Triangular flag cut */
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}

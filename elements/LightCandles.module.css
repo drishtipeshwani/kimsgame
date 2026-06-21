@@ -1,0 +1,215 @@
+.candlesWrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+
+/* --- PLATE & GROUND SHADOW --- */
+.groundShadow {
+  position: absolute;
+  bottom: 2px;
+  left: 3px;
+  width: 42px;
+  height: 5px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  filter: blur(2px);
+  z-index: 1;
+}
+
+.plate {
+  position: absolute;
+  bottom: 4px;
+  left: 6px;
+  width: 36px;
+  height: 5px;
+  background: linear-gradient(180deg, #5d4037 0%, #3e2723 100%);
+  border-radius: 50%;
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.15), 0 2px 3px rgba(0,0,0,0.4);
+  z-index: 2;
+}
+
+/* --- CANDLE CONTAINER WRAPPERS --- */
+.candleTall {
+  position: absolute;
+  left: 11px;
+  bottom: 6px;
+  width: 12px;
+  height: 24px;
+  z-index: 3;
+}
+
+.candleShort {
+  position: absolute;
+  left: 22px;
+  bottom: 5px;
+  width: 12px;
+  height: 16px;
+  z-index: 5;
+}
+
+/* --- CANDLE BODIES --- */
+.bodyTall {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 24px;
+  background: linear-gradient(to right, #e0a96d 0%, #f4dca7 30%, #ffd082 70%, #dca360 100%);
+  border-radius: 1px 1px 4px 4px;
+  box-shadow: inset 0 2px 3px rgba(255, 183, 77, 0.4), inset -1px -2px 3px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+.bodyShort {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 16px;
+  background: linear-gradient(to right, #cf985c 0%, #f4dca7 30%, #ffc46b 70%, #c48c4d 100%);
+  border-radius: 1px 1px 4px 4px;
+  box-shadow: inset 0 2px 3px rgba(255, 183, 77, 0.4), inset -1px -1px 2px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+/* Wax rims for depth */
+.waxTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: radial-gradient(ellipse at center, #ffe0b2 0%, #ffb74d 100%);
+  border-radius: 50%;
+  box-shadow: inset 0 0.5px 1px rgba(255, 255, 255, 0.8);
+}
+
+/* Wax Highlight Overlay */
+.highlight {
+  position: absolute;
+  top: 0;
+  left: 3px;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.35), transparent);
+  pointer-events: none;
+}
+
+/* --- WAX DRIPS --- */
+.drip {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 2.5px;
+  height: 8px;
+  background: #f4dca7;
+  border-radius: 0 0 1.5px 1.5px;
+  box-shadow: 0.5px 1px 1px rgba(0,0,0,0.1);
+}
+
+.dripShort {
+  position: absolute;
+  top: 1px;
+  right: 2px;
+  width: 2px;
+  height: 5px;
+  background: #f4dca7;
+  border-radius: 0 0 1px 1px;
+  box-shadow: -0.5px 1px 1px rgba(0,0,0,0.1);
+}
+
+/* --- WICKS --- */
+.wick {
+  position: absolute;
+  top: -4px;
+  left: calc(50% - 0.75px);
+  width: 1.5px;
+  height: 5px;
+  background: #2d1a09;
+  border-radius: 1px 1px 0 0;
+  z-index: 1;
+}
+
+/* --- FLAMES WITH FLICKERING EFFECT --- */
+.flame {
+  position: absolute;
+  top: -15px;
+  left: calc(50% - 4.5px);
+  width: 9px;
+  height: 13px;
+  transform-origin: center bottom;
+  animation: flicker 3s ease-in-out infinite alternate;
+  z-index: 2;
+}
+
+.candleShort .flame {
+  animation: flicker 2.4s ease-in-out infinite alternate-reverse;
+}
+
+.flameOuter {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, #ff3d00 15%, #ff9100 65%, rgba(255, 145, 0, 0) 100%);
+  border-radius: 50% 50% 35% 35% / 65% 65% 35% 35%;
+  filter: drop-shadow(0 0 1px #ff5722);
+}
+
+.flameInner {
+  position: absolute;
+  bottom: 1px;
+  left: calc(50% - 2.5px);
+  width: 5px;
+  height: 8px;
+  background: radial-gradient(ellipse at bottom, #ffffff 20%, #ffea00 70%, #ff9100 100%);
+  border-radius: 50% 50% 35% 35% / 65% 65% 35% 35%;
+}
+
+/* --- FLAME GLOW --- */
+.flameGlow {
+  position: absolute;
+  top: -24px;
+  left: calc(50% - 20px);
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, rgba(255, 110, 0, 0.35) 0%, rgba(255, 110, 0, 0) 70%);
+  border-radius: 50%;
+  filter: blur(3px);
+  pointer-events: none;
+  z-index: 0;
+  animation: pulseGlow 1.5s ease-in-out infinite alternate;
+}
+
+.candleShort .flameGlow {
+  animation-duration: 1.2s;
+}
+
+/* --- KEYFRAMES --- */
+@keyframes flicker {
+  0% {
+    transform: scale(0.96) rotate(-1.5deg);
+  }
+  30% {
+    transform: scale(1.02) rotate(1deg) skewX(0.5deg);
+  }
+  60% {
+    transform: scale(0.98) rotate(-0.5deg);
+  }
+  100% {
+    transform: scale(1.04) rotate(2deg) skewX(-0.5deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    opacity: 0.8;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}

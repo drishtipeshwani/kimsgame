@@ -1,0 +1,169 @@
+.jarWrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- DROP SHADOW --- */
+.shadow {
+  position: absolute;
+  bottom: 2px;
+  left: 11px;
+  width: 26px;
+  height: 5px;
+  background: rgba(93, 64, 55, 0.25);
+  border-radius: 50%;
+  filter: blur(1.5px);
+  z-index: 0;
+}
+
+/* --- JAR BODY --- */
+.jarBody {
+  position: absolute;
+  bottom: 4px;
+  left: 9px;
+  width: 30px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  border-top: none;
+  border-radius: 4px 4px 12px 12px;
+  box-shadow: 
+    inset 0 2px 4px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.2),
+    0 3px 6px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* --- HONEY LIQUID --- */
+.honey {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 21px;
+  background: linear-gradient(to top, #e65100 0%, #ff8f00 60%, #ffb300 100%);
+  border-radius: 0 0 10px 10px;
+}
+
+/* 3D Top Surface of Liquid Honey */
+.honeySurface {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: #ffe082;
+  border-radius: 50%;
+  box-shadow: inset 0 -1px 2px rgba(230, 81, 0, 0.3);
+}
+
+/* --- GLASS HIGHLIGHTS --- */
+.glassHighlightLeft {
+  position: absolute;
+  top: 4px;
+  left: 2px;
+  width: 2px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 1px;
+}
+
+.glassHighlightRight {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  width: 1.5px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 1px;
+}
+
+/* --- PAPER LABEL --- */
+.label {
+  position: absolute;
+  bottom: 4px;
+  left: 6px;
+  width: 15px;
+  height: 10px;
+  background: #fcf8e3;
+  border: 1px solid #d7ccc8;
+  border-radius: 1.5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+/* Tiny Honey Droplet Icon on Label */
+.honeyDrop {
+  width: 3px;
+  height: 4px;
+  background: #ff8f00;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  transform: rotate(-45deg);
+  box-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* --- JAR NECK --- */
+.jarNeck {
+  position: absolute;
+  top: 13px;
+  left: 14px;
+  width: 20px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+  z-index: 1;
+}
+
+/* --- CLOTH LID --- */
+.clothLid {
+  position: absolute;
+  top: 7px;
+  left: 12px;
+  width: 24px;
+  height: 7px;
+  background-color: #ff7043;
+  background-image: 
+    linear-gradient(90deg, rgba(255, 255, 255, 0.25) 50%, transparent 50%),
+    linear-gradient(rgba(255, 255, 255, 0.25) 50%, transparent 50%);
+  background-size: 3px 3px;
+  border-radius: 5px 5px 1px 1px;
+  box-shadow: 0 1.5px 2px rgba(0, 0, 0, 0.15);
+  z-index: 4;
+}
+
+/* Hanging skirt of fabric */
+.lidSkirt {
+  position: absolute;
+  top: 13px;
+  left: 11px;
+  width: 26px;
+  height: 3px;
+  background-color: #ff7043;
+  background-image: 
+    linear-gradient(90deg, rgba(255, 255, 255, 0.25) 50%, transparent 50%);
+  background-size: 3px 3px;
+  clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 85% 60%, 75% 100%, 65% 60%, 55% 100%, 45% 60%, 35% 100%, 25% 60%, 15% 100%, 5% 0%);
+  z-index: 4;
+}
+
+/* Elastic / String Tie around lid */
+.lidTie {
+  position: absolute;
+  top: 12px;
+  left: 11px;
+  width: 26px;
+  height: 1.5px;
+  background: #8d6e63;
+  border-radius: 1px;
+  box-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+}

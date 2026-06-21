@@ -1,0 +1,210 @@
+.wrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+
+/* Soft ground shadow that scales with hovering */
+.shadow {
+  position: absolute;
+  bottom: 2px;
+  left: 12px;
+  width: 24px;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  filter: blur(1.5px);
+  animation: shadowPulse 2s ease-in-out infinite;
+  z-index: 0;
+}
+
+/* The bee container that hovers */
+.bee {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 40px;
+  height: 40px;
+  animation: hover 2s ease-in-out infinite;
+  z-index: 1;
+}
+
+/* Striped abdomen/thorax */
+.body {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  width: 22px;
+  height: 16px;
+  background: repeating-linear-gradient(
+    90deg,
+    #3e2723 0px,
+    #3e2723 4px,
+    #ffb300 4px,
+    #ffb300 8px,
+    #ffca28 8px,
+    #ffca28 9px
+  );
+  border-radius: 50% 50% 48% 48%;
+  box-shadow: inset 1px 2px 3px rgba(255, 255, 255, 0.45), 
+              inset -1px -2px 3px rgba(0, 0, 0, 0.45),
+              0 2px 3px rgba(0, 0, 0, 0.15);
+  z-index: 3;
+}
+
+/* Outer highlight overlay to make body look glossy and round */
+.bodyHighlight {
+  position: absolute;
+  inset: 1px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.35) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Dark head */
+.head {
+  position: absolute;
+  top: 16px;
+  right: 5px;
+  width: 9px;
+  height: 13px;
+  background: #3e2723;
+  border-radius: 40% 50% 50% 40%;
+  box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.35),
+              0 1px 2px rgba(0, 0, 0, 0.15);
+  z-index: 4;
+}
+
+/* Cute white glistening eye */
+.eye {
+  position: absolute;
+  top: 3px;
+  right: 2px;
+  width: 2.5px;
+  height: 2.5px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 1px rgba(0,0,0,0.5);
+}
+
+/* Sharp stinger at the back */
+.stinger {
+  position: absolute;
+  top: 21px;
+  left: 6px;
+  width: 5px;
+  height: 4px;
+  background: #1a1005;
+  clip-path: polygon(100% 0%, 100% 100%, 0% 50%);
+  z-index: 2;
+}
+
+/* Back Wing - slightly darker/behind */
+.wingBack {
+  position: absolute;
+  top: 3px;
+  left: 15px;
+  width: 9px;
+  height: 16px;
+  background: rgba(224, 242, 241, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50% 50% 35% 35%;
+  transform-origin: bottom center;
+  transform: rotate(-35deg);
+  animation: flutterBack 0.12s linear infinite alternate;
+  z-index: 1;
+}
+
+/* Front Wing - brighter/closer */
+.wingFront {
+  position: absolute;
+  top: 2px;
+  left: 19px;
+  width: 10px;
+  height: 17px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.6);
+  border-radius: 50% 50% 35% 35%;
+  transform-origin: bottom center;
+  transform: rotate(-15deg);
+  animation: flutterFront 0.1s linear infinite alternate;
+  z-index: 5;
+}
+
+/* Tiny legs underneath */
+.legFront,
+.legBack {
+  position: absolute;
+  width: 2px;
+  height: 5px;
+  background: #2d1b18;
+  border-radius: 1px;
+  z-index: 2;
+}
+
+.legFront {
+  top: 29px;
+  left: 21px;
+  transform: rotate(-15deg);
+}
+
+.legBack {
+  top: 29px;
+  left: 16px;
+  transform: rotate(15deg);
+}
+
+/* --- ANIMATIONS --- */
+
+/* Gentle flying/hovering motion */
+@keyframes hover {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Shadow grows and shrinks inversely to flight height */
+@keyframes shadowPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.15;
+  }
+  50% {
+    transform: scale(0.8);
+    opacity: 0.08;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.15;
+  }
+}
+
+/* Rapid wing flutters */
+@keyframes flutterFront {
+  0% {
+    transform: rotate(-15deg) skewY(-5deg) scaleY(1);
+  }
+  100% {
+    transform: rotate(-35deg) skewY(-10deg) scaleY(0.85);
+  }
+}
+
+@keyframes flutterBack {
+  0% {
+    transform: rotate(-35deg) skewY(-5deg) scaleY(1);
+  }
+  100% {
+    transform: rotate(-55deg) skewY(-10deg) scaleY(0.85);
+  }
+}

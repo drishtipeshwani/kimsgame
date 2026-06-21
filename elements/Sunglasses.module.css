@@ -1,0 +1,118 @@
+.wrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shadow {
+  position: absolute;
+  bottom: 11px;
+  left: 3px;
+  width: 42px;
+  height: 5px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  filter: blur(2px);
+  z-index: 1;
+}
+
+.templeLeft,
+.templeRight {
+  position: absolute;
+  top: 17px;
+  width: 3px;
+  height: 12px;
+  background: #151515;
+  z-index: 2;
+  border-radius: 1px;
+}
+
+.templeLeft {
+  left: 2px;
+  transform: rotate(15deg);
+  box-shadow: inset -1px 0 1px rgba(255,255,255,0.1);
+}
+
+.templeRight {
+  right: 2px;
+  transform: rotate(-15deg);
+  box-shadow: inset 1px 0 1px rgba(255,255,255,0.1);
+}
+
+.glassesBody {
+  position: absolute;
+  top: 15px;
+  width: 44px;
+  height: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 3;
+}
+
+.leftFrame,
+.rightFrame {
+  position: relative;
+  width: 19px;
+  height: 16px;
+  background: linear-gradient(135deg, #2a2a2a 0%, #111111 100%);
+  border-radius: 4px 4px 9px 9px;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.35), 0 2px 4px rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stud {
+  position: absolute;
+  top: 2.5px;
+  width: 2px;
+  height: 1px;
+  background: #e0e0e0;
+  border-radius: 0.5px;
+  box-shadow: 0 0.5px 0.5px rgba(0,0,0,0.5);
+}
+
+.leftFrame .stud {
+  left: 2px;
+}
+
+.rightFrame .stud {
+  right: 2px;
+}
+
+.lens {
+  position: relative;
+  width: 15px;
+  height: 11px;
+  margin-top: 1.5px;
+  background: linear-gradient(180deg, #1d2731 0%, #0b0f13 100%);
+  border-radius: 2px 2px 7px 7px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.8);
+}
+
+.glare {
+  position: absolute;
+  top: -6px;
+  left: -4px;
+  width: 24px;
+  height: 10px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.1) 40%, transparent 41%);
+  transform: rotate(-15deg);
+}
+
+.bridge {
+  position: absolute;
+  left: 17px;
+  top: 1.5px;
+  width: 10px;
+  height: 3px;
+  background: #222;
+  border-radius: 3px 3px 0 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0,0,0,0.3);
+  z-index: 4;
+}

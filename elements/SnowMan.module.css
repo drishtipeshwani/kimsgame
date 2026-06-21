@@ -1,0 +1,201 @@
+.snowmanWrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Soft ground shadow for 3D realism */
+.groundShadow {
+  position: absolute;
+  bottom: 1px;
+  left: 10px;
+  width: 28px;
+  height: 4px;
+  background: rgba(13, 27, 42, 0.22);
+  border-radius: 50%;
+  filter: blur(1.5px);
+  z-index: 1;
+}
+
+/* Bottom Snowball */
+.bottomBall {
+  position: absolute;
+  bottom: 2px;
+  left: 12px;
+  width: 24px;
+  height: 22px;
+  background: radial-gradient(circle at 30% 30%, #ffffff 15%, #e1ecf4 70%, #b8cad8 100%);
+  border-radius: 50%;
+  box-shadow: inset -1px -2px 3px rgba(0, 0, 0, 0.05);
+  z-index: 2;
+}
+
+/* Middle Snowball */
+.middleBall {
+  position: absolute;
+  bottom: 17px;
+  left: 15px;
+  width: 18px;
+  height: 17px;
+  background: radial-gradient(circle at 30% 30%, #ffffff 15%, #e1ecf4 75%, #b8cad8 100%);
+  border-radius: 50%;
+  box-shadow: 0 1.5px 3px rgba(0, 0, 0, 0.08), inset -1px -1px 2px rgba(0, 0, 0, 0.05);
+  z-index: 3;
+}
+
+/* Head */
+.head {
+  position: absolute;
+  bottom: 28px;
+  left: 17.5px;
+  width: 13px;
+  height: 13px;
+  background: radial-gradient(circle at 30% 30%, #ffffff 15%, #e1ecf4 75%, #b8cad8 100%);
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), inset -0.5px -0.5px 1.5px rgba(0, 0, 0, 0.05);
+  z-index: 5;
+}
+
+/* Branch Arms */
+.leftArm {
+  position: absolute;
+  bottom: 22px;
+  left: 7px;
+  width: 9px;
+  height: 1.5px;
+  background: #5d4037;
+  transform: rotate(25deg);
+  transform-origin: right center;
+  border-radius: 1px;
+  z-index: 2;
+}
+
+.rightArm {
+  position: absolute;
+  bottom: 22px;
+  left: 32px;
+  width: 9px;
+  height: 1.5px;
+  background: #5d4037;
+  transform: rotate(-25deg);
+  transform-origin: left center;
+  border-radius: 1px;
+  z-index: 2;
+}
+
+/* Coal Eyes */
+.eyeLeft {
+  position: absolute;
+  bottom: 6.5px;
+  left: 3px;
+  width: 1.5px;
+  height: 1.5px;
+  background: #212121;
+  border-radius: 50%;
+}
+
+.eyeRight {
+  position: absolute;
+  bottom: 6.5px;
+  left: 8.5px;
+  width: 1.5px;
+  height: 1.5px;
+  background: #212121;
+  border-radius: 50%;
+}
+
+/* Carrot Nose */
+.nose {
+  position: absolute;
+  bottom: 4px;
+  left: 5px;
+  width: 5px;
+  height: 2px;
+  background: linear-gradient(to right, #ff9800, #e65100);
+  border-radius: 0 100% 100% 0;
+  transform: rotate(-5deg);
+}
+
+/* Coal Buttons */
+.button1 {
+  position: absolute;
+  bottom: 10px;
+  left: 8.25px;
+  width: 1.5px;
+  height: 1.5px;
+  background: #37474f;
+  border-radius: 50%;
+}
+
+.button2 {
+  position: absolute;
+  bottom: 6px;
+  left: 8.25px;
+  width: 1.5px;
+  height: 1.5px;
+  background: #37474f;
+  border-radius: 50%;
+}
+
+/* Red Scarf */
+.scarfNeck {
+  position: absolute;
+  bottom: 27px;
+  left: 16px;
+  width: 16px;
+  height: 3px;
+  background: linear-gradient(to right, #d32f2f, #f44336, #b71c1c);
+  border-radius: 2px;
+  z-index: 6;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.scarfTail {
+  position: absolute;
+  bottom: 19px;
+  left: 24px;
+  width: 3px;
+  height: 9px;
+  background: linear-gradient(to bottom, #d32f2f, #b71c1c);
+  border-radius: 0 0 1px 1px;
+  transform: rotate(12deg);
+  z-index: 6;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* Hat Details */
+.hatBrim {
+  position: absolute;
+  bottom: 39px;
+  left: 15px;
+  width: 18px;
+  height: 2px;
+  background: #263238;
+  border-radius: 1px;
+  z-index: 7;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.hatCrown {
+  position: absolute;
+  bottom: 41px;
+  left: 18px;
+  width: 12px;
+  height: 8px;
+  background: linear-gradient(to right, #263238 0%, #37474f 45%, #1a2327 100%);
+  border-radius: 1.5px 1.5px 0 0;
+  z-index: 7;
+}
+
+.hatBand {
+  position: absolute;
+  bottom: 41px;
+  left: 18px;
+  width: 12px;
+  height: 1.5px;
+  background: #d32f2f;
+  z-index: 8;
+}

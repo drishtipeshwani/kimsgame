@@ -1,0 +1,96 @@
+.ribbonWrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- DROP SHADOW --- */
+.dropShadow {
+  position: absolute;
+  bottom: 2px;
+  left: 10px;
+  width: 28px;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  filter: blur(2px);
+  z-index: 1;
+}
+
+/* --- LOOPS --- */
+.loop {
+  position: absolute;
+  top: 10px;
+  width: 18px;
+  height: 15px;
+  background: linear-gradient(135deg, #ff4d6d 0%, #d90429 50%, #800020 100%);
+  border-radius: 50% 50% 35% 50%;
+  box-shadow: 
+    inset 1px 2px 3px rgba(255, 255, 255, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+}
+
+.loopLeft {
+  left: 7px;
+  transform: rotate(-15deg);
+}
+
+.loopRight {
+  right: 7px;
+  transform: scaleX(-1) rotate(-15deg);
+}
+
+/* Realistic inner hole/shadow for the loops */
+.loopInner {
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  width: 10px;
+  height: 8px;
+  background: #4a000b;
+  border-radius: 50%;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.6);
+  opacity: 0.95;
+}
+
+/* --- CENTRAL KNOT --- */
+.knot {
+  position: absolute;
+  top: 13px;
+  width: 11px;
+  height: 10px;
+  background: linear-gradient(135deg, #ff758f 0%, #d90429 60%, #a6001a 100%);
+  border-radius: 4px;
+  box-shadow: 
+    inset 0 1px 1px rgba(255, 255, 255, 0.5),
+    0 2px 4px rgba(0, 0, 0, 0.25);
+  z-index: 4;
+}
+
+/* --- TAILS --- */
+.tail {
+  position: absolute;
+  bottom: 6px;
+  width: 8px;
+  height: 22px;
+  background: linear-gradient(to bottom, #d90429 0%, #a6001a 70%, #5c000a 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 82%, 0% 100%);
+  z-index: 2;
+  box-shadow: inset 1px 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.tailLeft {
+  left: 14px;
+  transform: rotate(15deg);
+  transform-origin: top right;
+}
+
+.tailRight {
+  right: 14px;
+  transform: rotate(-15deg);
+  transform-origin: top left;
+}

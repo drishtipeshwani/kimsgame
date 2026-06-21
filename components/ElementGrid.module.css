@@ -1,0 +1,55 @@
+.grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  /* Fixed row heights (not 1fr) so all 4 rows are guaranteed distinct space, regardless of the 3D container */
+  grid-auto-rows: var(--grid-row-height, 64px);
+  column-gap: var(--grid-col-gap, 12px);
+  row-gap: var(--grid-row-gap, 28px);
+  width: 100%;
+  transform-style: preserve-3d;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--grid-row-height, 64px);
+  
+  /* Set transform origin to bottom so elements stand on the floor rather than sinking into it */
+  transform-origin: bottom center;
+  /* Counter-rotate so items stand up like billboards */
+  transform: rotateZ(0deg) rotateX(-55deg) translateZ(1px);
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.cell:hover {
+  transform: rotateZ(0deg) rotateX(-55deg) scale(1.15) translateZ(15px);
+}
+
+.icon {
+  width: var(--element-size);
+  height: var(--element-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Add drop shadow that drops straight "down" relative to the camera, which maps to "back" on the 3D floor */
+  filter: drop-shadow(0 12px 6px rgba(0, 0, 0, 0.25));
+}
+
+@media (max-width: 520px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 56px;
+    column-gap: 12px;
+    row-gap: 24px;
+    --element-size: 48px;
+  }
+}
+
+@media (max-width: 360px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

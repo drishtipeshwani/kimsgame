@@ -1,0 +1,188 @@
+.bookWrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- DROP SHADOW --- */
+.shadow {
+  position: absolute;
+  bottom: 4px;
+  left: 5px;
+  width: 38px;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  filter: blur(1.5px);
+  z-index: 1;
+}
+
+/* --- MAGICAL GLOW SPARKLES --- */
+.sparkle1,
+.sparkle2,
+.sparkle3 {
+  position: absolute;
+  background: #ffeb3b;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 1.5px #ffb300);
+  z-index: 6;
+  opacity: 0.85;
+}
+
+.sparkle1 {
+  width: 3px;
+  height: 3px;
+  top: 6px;
+  left: 14px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.sparkle2 {
+  width: 4px;
+  height: 4px;
+  top: 3px;
+  right: 16px;
+  animation: pulse 1.8s infinite ease-in-out 0.3s;
+}
+
+.sparkle3 {
+  width: 2px;
+  height: 2px;
+  top: 10px;
+  right: 10px;
+  animation: pulse 1.2s infinite ease-in-out 0.6s;
+}
+
+/* --- HARDCOVER BACKING --- */
+.coverLeft,
+.coverRight {
+  position: absolute;
+  bottom: 11px;
+  height: 25px;
+  background: linear-gradient(135deg, #4a148c, #311b92);
+  border-radius: 3px;
+  z-index: 2;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.coverLeft {
+  left: 4px;
+  width: 20px;
+  border-radius: 4px 1px 1px 4px;
+  transform: skewY(-2deg);
+}
+
+.coverRight {
+  right: 4px;
+  width: 20px;
+  border-radius: 1px 4px 4px 1px;
+  transform: skewY(2deg);
+}
+
+/* --- LEFT PAGE --- */
+.pageLeft {
+  position: absolute;
+  left: 5px;
+  bottom: 13px;
+  width: 19px;
+  height: 22px;
+  /* Curve gradient to create natural 3D leaf curve bending into the center crease */
+  background: linear-gradient(to right, #f5f5f5 0%, #ffffff 75%, #d7ccc8 100%);
+  border-radius: 4px 2px 2px 4px;
+  z-index: 3;
+  transform: skewY(-2deg);
+  padding: 3px 2px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5px;
+}
+
+/* --- RIGHT PAGE --- */
+.pageRight {
+  position: absolute;
+  right: 5px;
+  bottom: 13px;
+  width: 19px;
+  height: 22px;
+  /* Symmetrical curve gradient on the right side */
+  background: linear-gradient(to left, #f5f5f5 0%, #ffffff 75%, #d7ccc8 100%);
+  border-radius: 2px 4px 4px 2px;
+  z-index: 3;
+  transform: skewY(2deg);
+  padding: 3px 2px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5px;
+}
+
+/* --- FAUX TEXT LINES --- */
+.textLine1,
+.textLine2,
+.textLine3,
+.textLine4,
+.textLine5 {
+  height: 1.5px;
+  background: #78909c;
+  border-radius: 0.5px;
+  opacity: 0.85;
+}
+
+.textLine1 { width: 13px; }
+.textLine2 { width: 11px; }
+.textLine3 { width: 8px; }
+.textLine4 { width: 12px; margin-top: 1px; }
+.textLine5 { width: 10px; }
+
+/* --- ILLUSTRATION PLACEHOLDER ON PAGE --- */
+.illustration {
+  width: 13px;
+  height: 8px;
+  background: linear-gradient(135deg, #0288d1, #26a69a);
+  border-radius: 1px;
+  margin-bottom: 1px;
+  opacity: 0.9;
+}
+
+/* --- BOOK SPINE / CENTER CREASE --- */
+.spine {
+  position: absolute;
+  left: 23px;
+  bottom: 13px;
+  width: 2px;
+  height: 22px;
+  background: linear-gradient(to bottom, #3e2723, #1a0c05);
+  z-index: 4;
+  opacity: 0.85;
+  box-shadow: 0 0 1px rgba(0,0,0,0.5);
+}
+
+/* --- BOOKMARK RIBBON --- */
+.ribbon {
+  position: absolute;
+  left: 22px;
+  bottom: 4px;
+  width: 3.5px;
+  height: 11px;
+  background: #e53935;
+  z-index: 2;
+  border-radius: 0 0 1px 1.5px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  transform: rotate(5deg);
+}
+
+/* Simple subtle glow animation for magic particles */
+@keyframes pulse {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  } 
+  50% {
+    transform: translateY(-2px) scale(1.2);
+    opacity: 1;
+  }
+}

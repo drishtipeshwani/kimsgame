@@ -1,0 +1,159 @@
+.scene {
+  --box-w: 580px;
+  --box-h: 580px;
+  --box-d: 64px;
+  
+  --lid-w: 596px;
+  --lid-h: 596px;
+  --lid-d: 24px;
+
+  /* Cardboard colors for different lighting faces */
+  --kraft-light: #e3c19b;
+  --kraft-base: #d0a77a;
+  --kraft-dark: #b88d5b;
+  --kraft-darker: #9e7445;
+
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 0 160px;
+  display: flex;
+  justify-content: center;
+  perspective: 2000px;
+}
+
+.memorize {
+  padding: 8px 0 16px;
+  max-width: none;
+  transform: scale(min(1, calc((100svh - 150px) / 680)));
+  transform-origin: top center;
+}
+
+/* The entire scene is rotated to an isometric angle */
+.isometricWrapper {
+  position: relative;
+  width: var(--box-w);
+  height: var(--box-h);
+  transform-style: preserve-3d;
+  transform: rotateX(55deg) rotateZ(0deg);
+  transition: transform 0.5s ease;
+}
+
+/* --- THE MAIN BOX BASE --- */
+.boxBase {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+
+.floorShadow {
+  position: absolute;
+  inset: -20px;
+  background: rgba(0, 0, 0, 0.25);
+  filter: blur(20px);
+  transform: translateZ(-2px);
+}
+
+.floor {
+  position: absolute;
+  inset: 0;
+  background: var(--kraft-base);
+  border: 1px solid var(--kraft-dark);
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+  transform-style: preserve-3d;
+}
+
+.floorContent {
+  position: absolute;
+  inset: 0;
+  padding: 24px;
+  transform: translateZ(1px); /* Prevent z-fighting with the floor */
+  transform-style: preserve-3d;
+  /* Center the fixed-size grid block within the box floor */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Box Walls - mapped to the 4 edges of the floor */
+.wallBackRight {
+  position: absolute; top: 0; left: 0; width: 100%; height: var(--box-d);
+  transform-origin: top; transform: rotateX(90deg);
+  background: linear-gradient(to bottom, rgba(50,25,0,0.4) 0%, transparent 100%), var(--kraft-base);
+}
+.wallFrontRight {
+  position: absolute; top: 0; right: 0; width: var(--box-d); height: 100%;
+  transform-origin: right; transform: rotateY(90deg);
+  background: linear-gradient(to left, rgba(50,25,0,0.4) 0%, transparent 100%), var(--kraft-light);
+}
+.wallBackLeft {
+  position: absolute; top: 0; left: 0; width: var(--box-d); height: 100%;
+  transform-origin: left; transform: rotateY(-90deg);
+  background: linear-gradient(to right, rgba(50,25,0,0.4) 0%, transparent 100%), var(--kraft-dark);
+}
+.wallFrontLeft {
+  position: absolute; bottom: 0; left: 0; width: 100%; height: var(--box-d);
+  transform-origin: bottom; transform: rotateX(-90deg);
+  background: linear-gradient(to top, rgba(50,25,0,0.4) 0%, transparent 100%), var(--kraft-darker);
+}
+
+/* --- THE SHOEBOX LID --- */
+.lidWrapper {
+  position: absolute;
+  width: var(--lid-w);
+  height: var(--lid-h);
+  /* Center the slightly larger lid over the box */
+  left: calc((var(--box-w) - var(--lid-w)) / 2);
+  top: calc((var(--box-h) - var(--lid-h)) / 2);
+  transform-style: preserve-3d;
+}
+
+/* When open, the lid sits on the floor completely to the left side */
+.open .lidWrapper {
+  transform: translateZ(var(--lid-d)) translateX(calc(var(--box-w) * -1.05)) translateY(0);
+}
+
+/* When closed, the lid drops down onto the box */
+.closed .lidWrapper {
+  transform: translateZ(calc(var(--box-d) + 2px));
+  animation: closeLidSmooth 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes closeLidSmooth {
+  0% {
+    transform: translateZ(var(--lid-d)) translateX(calc(var(--box-w) * -1.05)) translateY(0);
+  }
+  50% {
+    transform: translateZ(calc(var(--box-d) + 150px)) translateX(calc(var(--box-w) * -0.5)) translateY(0);
+  }
+  100% {
+    transform: translateZ(calc(var(--box-d) + 2px)) translateX(0) translateY(0);
+  }
+}
+
+.lidTop {
+  position: absolute;
+  inset: 0;
+  background: var(--kraft-light);
+  transform: translateZ(0);
+  border: 1px solid var(--kraft-base);
+}
+
+/* Lid Walls */
+.lidWallBackRight {
+  position: absolute; top: 0; left: 0; width: 100%; height: var(--lid-d);
+  transform-origin: top; transform: rotateX(-90deg); background: var(--kraft-base);
+}
+.lidWallFrontRight {
+  position: absolute; top: 0; right: 0; width: var(--lid-d); height: 100%;
+  transform-origin: right; transform: rotateY(-90deg); background: var(--kraft-darker);
+}
+.lidWallBackLeft {
+  position: absolute; top: 0; left: 0; width: var(--lid-d); height: 100%;
+  transform-origin: left; transform: rotateY(90deg); background: var(--kraft-light);
+}
+.lidWallFrontLeft {
+  position: absolute; bottom: 0; left: 0; width: 100%; height: var(--lid-d);
+  transform-origin: bottom; transform: rotateX(90deg); background: var(--kraft-dark);
+}

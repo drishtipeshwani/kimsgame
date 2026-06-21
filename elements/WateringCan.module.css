@@ -1,0 +1,137 @@
+.container {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+
+/* Ground Shadow */
+.shadow {
+  position: absolute;
+  bottom: 5px;
+  left: 8px;
+  width: 24px;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  filter: blur(1px);
+  z-index: 1;
+}
+
+/* Main Watering Can Body */
+.body {
+  position: absolute;
+  left: 12px;
+  bottom: 8px;
+  width: 20px;
+  height: 18px;
+  background: linear-gradient(to right, #006064 0%, #00acc1 35%, #00e5ff 60%, #00838f 100%);
+  border-radius: 4px 4px 6px 6px;
+  box-shadow: inset -1px -2px 3px rgba(0,0,0,0.2), 1px 2px 3px rgba(0,0,0,0.15);
+  z-index: 4;
+  overflow: hidden;
+}
+
+/* Shiny reflective streak on the body */
+.bodyHighlight {
+  position: absolute;
+  top: 0;
+  left: 6px;
+  width: 3px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.25);
+  filter: blur(0.5px);
+}
+
+/* Top Carrying Handle */
+.topHandle {
+  position: absolute;
+  left: 14px;
+  top: 11px;
+  width: 16px;
+  height: 13px;
+  border: 2px solid #00838f;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  z-index: 3;
+}
+
+/* Back Pouring Handle */
+.backHandle {
+  position: absolute;
+  left: 5px;
+  bottom: 11px;
+  width: 9px;
+  height: 13px;
+  border: 2px solid #00838f;
+  border-right: none;
+  border-radius: 7px 0 0 7px;
+  transform: rotate(10deg);
+  z-index: 2;
+}
+
+/* Long Spout */
+.spout {
+  position: absolute;
+  right: 10px;
+  bottom: 12px;
+  width: 13px;
+  height: 3px;
+  background: linear-gradient(to top, #00838f, #00acc1);
+  transform: rotate(-35deg);
+  transform-origin: left bottom;
+  z-index: 3;
+  border-radius: 1px;
+}
+
+/* Brass / Gold Sprinkler Head (Rose) */
+.rose {
+  position: absolute;
+  right: 5px;
+  top: 15px;
+  width: 5px;
+  height: 8px;
+  background: linear-gradient(135deg, #ffe082 0%, #ffb300 40%, #ff8f00 100%);
+  border-radius: 50% 2px 2px 50% / 50% 20% 20% 50%;
+  transform: rotate(-35deg);
+  z-index: 5;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.15);
+}
+
+/* Water Droplets */
+.droplet1,
+.droplet2,
+.droplet3 {
+  position: absolute;
+  background: #e0f7fa;
+  border-radius: 50% 0 50% 50%;
+  opacity: 0.85;
+  z-index: 6;
+}
+
+.droplet1 {
+  right: 2px;
+  top: 14px;
+  width: 2px;
+  height: 2px;
+  transform: rotate(-45deg);
+}
+
+.droplet2 {
+  right: 0px;
+  top: 19px;
+  width: 1.5px;
+  height: 1.5px;
+  transform: rotate(-45deg);
+}
+
+.droplet3 {
+  right: -3px;
+  top: 16px;
+  width: 1.8px;
+  height: 1.8px;
+  transform: rotate(-45deg);
+}

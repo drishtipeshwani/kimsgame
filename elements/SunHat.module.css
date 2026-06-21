@@ -1,0 +1,169 @@
+.wrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ground Shadow */
+.groundShadow {
+  position: absolute;
+  bottom: 3px;
+  left: 5px;
+  width: 38px;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  filter: blur(2px);
+  z-index: 1;
+}
+
+/* Hat Brim */
+.brim {
+  position: absolute;
+  bottom: 8px;
+  left: 2px;
+  width: 44px;
+  height: 15px;
+  background: radial-gradient(ellipse at 50% 30%, #fbe9e7 0%, #ffcc80 40%, #e65100 100%);
+  border-radius: 50%;
+  box-shadow: inset 0 -1.5px 3px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* Concentric Straw Weaving Pattern */
+.brimTexture {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-radial-gradient(
+    circle at 50% 30%,
+    transparent,
+    transparent 2px,
+    rgba(216, 112, 14, 0.18) 3px,
+    rgba(216, 112, 14, 0.18) 4px
+  );
+  opacity: 0.8;
+}
+
+/* Crown Shadow cast onto the brim */
+.crownShadow {
+  position: absolute;
+  bottom: 14px;
+  left: 11px;
+  width: 26px;
+  height: 6px;
+  background: rgba(94, 35, 0, 0.3);
+  border-radius: 50%;
+  filter: blur(1px);
+  z-index: 3;
+}
+
+/* Dome Crown */
+.crown {
+  position: absolute;
+  bottom: 16px;
+  left: 12px;
+  width: 24px;
+  height: 17px;
+  background: linear-gradient(135deg, #ffe0b2 0%, #ffb74d 50%, #f57c00 100%);
+  border-radius: 50% 50% 15% 15% / 80% 80% 20% 20%;
+  box-shadow: inset -1px -2px 3px rgba(0, 0, 0, 0.15), inset 1px 2px 3px rgba(255, 255, 255, 0.6);
+  z-index: 4;
+  overflow: hidden;
+}
+
+/* Woven texture for Crown */
+.crownTexture {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(216, 112, 14, 0.15) 3px,
+    rgba(216, 112, 14, 0.15) 4px
+  );
+  opacity: 0.7;
+}
+
+/* Navy Ribbon Band */
+.ribbonBand {
+  position: absolute;
+  bottom: 16px;
+  left: 12px;
+  width: 24px;
+  height: 3.5px;
+  background: linear-gradient(to right, #0d47a1, #1976d2, #0d47a1);
+  border-radius: 0 0 1px 1px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  z-index: 5;
+}
+
+/* Ribbon Bow Elements */
+.bowCenter {
+  position: absolute;
+  bottom: 15.5px;
+  left: 28px;
+  width: 3.5px;
+  height: 4.5px;
+  background: #0d47a1;
+  border-radius: 1px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  z-index: 8;
+}
+
+.bowLoopLeft {
+  position: absolute;
+  bottom: 15px;
+  left: 24px;
+  width: 5px;
+  height: 5px;
+  border: 1.5px solid #1565c0;
+  background: #0d47a1;
+  border-radius: 50% 20% 50% 50%;
+  transform: rotate(-15deg);
+  z-index: 7;
+}
+
+.bowLoopRight {
+  position: absolute;
+  bottom: 15px;
+  left: 30px;
+  width: 5px;
+  height: 5px;
+  border: 1.5px solid #1565c0;
+  background: #0d47a1;
+  border-radius: 20% 50% 50% 50%;
+  transform: rotate(15deg);
+  z-index: 7;
+}
+
+/* Flowing Ribbon Tails */
+.bowTailLeft {
+  position: absolute;
+  bottom: 8px;
+  left: 27px;
+  width: 2px;
+  height: 8px;
+  background: #0d47a1;
+  border-radius: 0 0 1px 1px;
+  transform: rotate(15deg);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+  z-index: 6;
+}
+
+.bowTailRight {
+  position: absolute;
+  bottom: 7px;
+  left: 30px;
+  width: 2px;
+  height: 9px;
+  background: #0d47a1;
+  border-radius: 0 0 1px 1px;
+  transform: rotate(-10deg);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+  z-index: 6;
+}

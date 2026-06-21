@@ -1,0 +1,251 @@
+.wrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* --- ATMOSPHERIC SNOW --- */
+.snowflake {
+  position: absolute;
+  background: #ffffff;
+  border-radius: 50%;
+  opacity: 0.8;
+  filter: blur(0.3px);
+  z-index: 1;
+}
+
+.sf1 {
+  top: 6px;
+  left: 10px;
+  width: 2px;
+  height: 2px;
+}
+
+.sf2 {
+  top: 14px;
+  right: 12px;
+  width: 1.5px;
+  height: 1.5px;
+  opacity: 0.5;
+}
+
+.sf3 {
+  top: 26px;
+  left: 6px;
+  width: 2px;
+  height: 2px;
+  opacity: 0.7;
+}
+
+/* --- DROP SHADOW --- */
+.shadow {
+  position: absolute;
+  bottom: 2px;
+  left: 8px;
+  width: 32px;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  filter: blur(1.5px);
+  z-index: 0;
+}
+
+/* --- BOOT CONTAINER --- */
+.bootContainer {
+  position: absolute;
+  width: 36px;
+  height: 40px;
+  bottom: 4px;
+  left: 6px;
+  z-index: 2;
+}
+
+/* --- SOLE WITH TREADS --- */
+.sole {
+  position: absolute;
+  bottom: 0;
+  left: 2px;
+  width: 32px;
+  height: 4px;
+  background: #1a1a1e;
+  border-radius: 2px 2px 4px 4px;
+  z-index: 6;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+.treads {
+  position: absolute;
+  bottom: -1px;
+  left: 3px;
+  width: 26px;
+  height: 2px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    #0f0f11,
+    #0f0f11 2px,
+    transparent 2px,
+    transparent 5px
+  );
+}
+
+/* --- WATERPROOF LOWER FOOT --- */
+.foot {
+  position: absolute;
+  bottom: 3px;
+  left: 2px;
+  width: 32px;
+  height: 13px;
+  background: linear-gradient(135deg, #37474f 0%, #212121 75%, #111111 100%);
+  border-radius: 4px 14px 6px 4px;
+  z-index: 5;
+  box-shadow: 
+    inset 1px 2px 3px rgba(255, 255, 255, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.toeHighlight {
+  position: absolute;
+  right: 2px;
+  top: 1px;
+  width: 10px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50% 50% 0 0;
+  transform: rotate(15deg);
+}
+
+/* --- LEATHER SHAFT --- */
+.shaft {
+  position: absolute;
+  bottom: 11px;
+  left: 5px;
+  width: 17px;
+  height: 21px;
+  background: linear-gradient(to right, #5d4037, #8d6e63 45%, #a1887f 80%, #6d4c41 100%);
+  border-radius: 4px 4px 2px 2px;
+  z-index: 3;
+  box-shadow: inset -1px 2px 2px rgba(255, 255, 255, 0.1);
+}
+
+/* --- COZY SHEARLING CUFF --- */
+.cuff {
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  width: 19px;
+  height: 6px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  z-index: 7;
+  box-shadow: 0 1.5px 3px rgba(0, 0, 0, 0.15);
+}
+
+.cuffTuft1,
+.cuffTuft2,
+.cuffTuft3 {
+  position: absolute;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+.cuffTuft1 {
+  width: 7px;
+  height: 7px;
+  top: -2px;
+  left: 1px;
+  box-shadow: inset -1px -1px 2px rgba(0,0,0,0.05);
+}
+
+.cuffTuft2 {
+  width: 9px;
+  height: 9px;
+  top: -3px;
+  left: 5px;
+  box-shadow: inset 0 -1px 2px rgba(0,0,0,0.05);
+}
+
+.cuffTuft3 {
+  width: 7px;
+  height: 7px;
+  top: -2px;
+  right: 1px;
+  box-shadow: inset 1px -1px 2px rgba(0,0,0,0.05);
+}
+
+/* --- RED LACES & DETAILS --- */
+.tongue {
+  position: absolute;
+  top: 1px;
+  right: -2px;
+  width: 5px;
+  height: 19px;
+  background: #4e342e;
+  border-radius: 1px;
+  z-index: 1;
+}
+
+.lace1,
+.lace2,
+.lace3 {
+  position: absolute;
+  right: -2.5px;
+  width: 8px;
+  height: 1.5px;
+  background: #e53935;
+  z-index: 2;
+  box-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.3);
+}
+
+.lace1 {
+  top: 4px;
+  transform: rotate(18deg);
+}
+
+.lace2 {
+  top: 9px;
+  transform: rotate(-18deg);
+}
+
+.lace3 {
+  top: 14px;
+  transform: rotate(18deg);
+}
+
+.laceLoop {
+  position: absolute;
+  top: 2px;
+  right: -5px;
+  width: 4px;
+  height: 4px;
+  border: 1.2px solid #e53935;
+  border-radius: 50%;
+  z-index: 4;
+}
+
+/* --- STITCH LINE & TAB --- */
+.stitchLine {
+  position: absolute;
+  bottom: 12px;
+  left: 6px;
+  width: 15px;
+  height: 1px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.35);
+  z-index: 4;
+}
+
+.pullTab {
+  position: absolute;
+  top: 7px;
+  left: 3px;
+  width: 1.5px;
+  height: 5px;
+  background: #e53935;
+  border-radius: 1px;
+  z-index: 2;
+  transform: rotate(-15deg);
+}

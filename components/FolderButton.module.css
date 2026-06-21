@@ -1,0 +1,113 @@
+.button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  color: inherit;
+  transition: transform 0.15s ease;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.button:active {
+  transform: translateY(-1px);
+}
+
+.buttonActive .label {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.iconWrap {
+  position: relative;
+  width: 72px;
+  height: 56px;
+}
+
+.large .iconWrap {
+  width: 88px;
+  height: 68px;
+  transform: translateY(-8px);
+}
+
+.large:hover {
+  transform: translateY(-11px);
+}
+
+/* Folder tab (back layer) */
+.tab {
+  position: absolute;
+  top: 0;
+  left: 8%;
+  width: 38%;
+  height: 22%;
+  background: var(--folder-back, #fbf1ef);
+  border-radius: 4px 4px 0 0;
+}
+
+.large .tab {
+  border-radius: 5px 5px 0 0;
+}
+
+/* Folder body (front layer) */
+.body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 78%;
+  background: var(--folder-front, #e0916f);
+  border-radius: 4px 6px 6px 6px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.large .body {
+  border-radius: 5px 8px 8px 8px;
+}
+
+.label {
+  font-family: var(--font-dongle), sans-serif;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: center;
+  max-width: 110px;
+}
+
+.large .label {
+  font-size: 26px;
+  max-width: 120px;
+}
+
+@media (max-width: 640px) {
+  .iconWrap {
+    width: 56px;
+    height: 44px;
+  }
+
+  .large .iconWrap {
+    width: 68px;
+    height: 52px;
+  }
+
+  .label {
+    font-size: 18px;
+    max-width: 80px;
+  }
+
+  .large .label {
+    font-size: 20px;
+    max-width: 90px;
+  }
+
+  .button {
+    padding: 6px 8px;
+    gap: 6px;
+  }
+}

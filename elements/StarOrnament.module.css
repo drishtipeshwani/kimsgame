@@ -1,0 +1,128 @@
+.wrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* --- SOFT BACKGLOW --- */
+.glow {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: radial-gradient(circle, rgba(255, 223, 128, 0.4) 0%, rgba(255, 193, 7, 0) 70%);
+  top: 12px;
+  left: 8px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* --- HANGER STRING & CAP --- */
+.string {
+  position: absolute;
+  top: 0;
+  left: 23.5px;
+  width: 1px;
+  height: 12px;
+  background: linear-gradient(to bottom, #9e9e9e, #ffd54f);
+  z-index: 2;
+}
+
+.cap {
+  position: absolute;
+  top: 10px;
+  left: 21px;
+  width: 6px;
+  height: 4px;
+  background: linear-gradient(to right, #b58900, #ffe082, #b58900);
+  border-radius: 2px 2px 0 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+}
+
+/* --- STAR CONTAINER --- */
+.starContainer {
+  position: absolute;
+  top: 11px;
+  left: 6px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+}
+
+/* --- BEVELED 3D FACETS --- */
+.facet {
+  position: absolute;
+  background: red;
+  /* Perfect diamond clip-path */
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+/* Main Vertical Needle */
+.vertical {
+  width: 10px;
+  height: 34px;
+  /* Sharp 50/50 gradient to create 3D bevel */
+  background: linear-gradient(90deg, #fff176 50%, #f57f17 50%);
+  filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.15));
+}
+
+/* Main Horizontal Needle */
+.horizontal {
+  width: 34px;
+  height: 10px;
+  /* Sharp 50/50 horizontal gradient */
+  background: linear-gradient(180deg, #fff59d 50%, #e65100 50%);
+}
+
+/* Diagonal Star Points (Smaller, rotated 45 degrees) */
+.diag1 {
+  width: 8px;
+  height: 24px;
+  background: linear-gradient(90deg, #fff59d 50%, #ffb300 50%);
+  transform: rotate(45deg);
+}
+
+.diag2 {
+  width: 8px;
+  height: 24px;
+  background: linear-gradient(90deg, #fff176 50%, #f57f17 50%);
+  transform: rotate(-45deg);
+}
+
+/* --- CENTER CORE GEM --- */
+.centerCore {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #ffb300 40%, #b58900 100%);
+  transform: rotate(45deg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  border: 0.5px solid rgba(255, 255, 255, 0.5);
+  z-index: 5;
+}
+
+/* --- SPECULAR SPARKLE --- */
+.sparkle {
+  position: absolute;
+  top: 6px;
+  left: 21px;
+  width: 4px;
+  height: 4px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 4px #ffffff, 0 0 8px #ffffff;
+  z-index: 6;
+  animation: pulse 3s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(0.8); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+}

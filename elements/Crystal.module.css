@@ -1,0 +1,162 @@
+.crystalWrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  background: transparent;
+}
+
+/* --- BACKLIGHT & SHADOW --- */
+.ambientGlow {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.45) 0%, rgba(224, 64, 251, 0.2) 50%, transparent 70%);
+  filter: blur(4px);
+  z-index: 1;
+  bottom: 8px;
+}
+
+.shadow {
+  position: absolute;
+  bottom: 2px;
+  left: 10px;
+  width: 28px;
+  height: 5px;
+  background: rgba(15, 3, 26, 0.6);
+  border-radius: 50%;
+  filter: blur(1.5px);
+  z-index: 2;
+}
+
+/* --- SHARD BASE CLASS --- */
+.shard {
+  position: absolute;
+  display: block;
+}
+
+/* --- MAIN CENTRAL SHARD --- */
+.shardMain {
+  width: 16px;
+  height: 34px;
+  bottom: 6px;
+  left: calc(50% - 8px);
+  z-index: 5;
+  filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.15));
+}
+
+/* --- LEFT LEANING SHARD --- */
+.shardLeft {
+  width: 12px;
+  height: 25px;
+  bottom: 5px;
+  left: 9px;
+  transform: rotate(-22deg);
+  transform-origin: bottom right;
+  z-index: 4;
+  opacity: 0.95;
+}
+
+/* --- RIGHT LEANING SHARD --- */
+.shardRight {
+  width: 9px;
+  height: 19px;
+  bottom: 5px;
+  right: 11px;
+  transform: rotate(24deg);
+  transform-origin: bottom left;
+  z-index: 3;
+  opacity: 0.85;
+}
+
+/* --- ANATOMICAL CRYSTAL FACETS --- */
+.facet {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Left Facet: Dark side of the crystal */
+.facetLeft {
+  clip-path: polygon(50% 0%, 50% 100%, 0% 78%, 0% 22%);
+  background: linear-gradient(135deg, #7b1fa2 0%, #4a148c 70%, #2a085c 100%);
+}
+
+/* Right Facet: Vividly lit side of the crystal */
+.facetRight {
+  clip-path: polygon(50% 0%, 100% 22%, 100% 78%, 50% 100%);
+  background: linear-gradient(225deg, #e040fb 0%, #ba68c8 50%, #6a1b9a 100%);
+}
+
+/* Front Facet: Shiny central ridge creating the volumetric 3D look */
+.facetFront {
+  clip-path: polygon(50% 0%, 75% 22%, 50% 90%, 25% 22%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(0, 229, 255, 0.4) 35%, rgba(186, 104, 200, 0) 100%);
+  opacity: 0.85;
+}
+
+/* Special Highlights for Left Shard Facets to look distinct */
+.shardLeft .facetLeft {
+  background: linear-gradient(135deg, #6a1b9a, #311b92);
+}
+.shardLeft .facetRight {
+  background: linear-gradient(225deg, #00e5ff, #00b0ff, #4a148c);
+}
+
+/* Special Highlights for Right Shard Facets */
+.shardRight .facetLeft {
+  background: linear-gradient(135deg, #4a148c, #1a0633);
+}
+.shardRight .facetRight {
+  background: linear-gradient(225deg, #e040fb, #7b1fa2);
+}
+
+/* --- SPECULAR EXTRA EFFECT --- */
+.apexGlow {
+  position: absolute;
+  top: 0px;
+  left: calc(50% - 3px);
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #ffffff 0%, rgba(0, 229, 255, 0.8) 40%, transparent 100%);
+  filter: blur(0.5px);
+  z-index: 6;
+  pointer-events: none;
+}
+
+/* --- MAGICAL SPARKLES --- */
+.sparkle1,
+.sparkle2 {
+  position: absolute;
+  background: #ffffff;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 1.5px #00e5ff);
+  z-index: 7;
+}
+
+.sparkle1 {
+  width: 2.5px;
+  height: 2.5px;
+  top: 6px;
+  left: 10px;
+  animation: pulse 2.5s infinite ease-in-out;
+}
+
+.sparkle2 {
+  width: 2px;
+  height: 2px;
+  top: 14px;
+  right: 8px;
+  animation: pulse 1.8s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(0.6); opacity: 0.4; }
+  50% { transform: scale(1.2); opacity: 1; }
+}

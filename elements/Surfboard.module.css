@@ -1,0 +1,121 @@
+.canvas {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- SOFT DEPTH SHADOW --- */
+.shadow {
+  position: absolute;
+  width: 10px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 50% 50% 35% 35% / 80% 80% 20% 20%;
+  filter: blur(2px);
+  transform: rotate(20deg) translate(5px, 3px);
+  z-index: 1;
+}
+
+/* --- ROTATION WRAPPER --- */
+.surfboardContainer {
+  position: absolute;
+  width: 16px;
+  height: 44px;
+  transform: rotate(20deg);
+  z-index: 2;
+}
+
+/* --- THE FIN (PEEKING FROM BEHIND) --- */
+.fin {
+  position: absolute;
+  bottom: 0px;
+  left: 3px;
+  width: 3px;
+  height: 6px;
+  background: #263238;
+  border-top-left-radius: 100%;
+  transform: rotate(-15deg);
+  z-index: 1;
+}
+
+/* --- MAIN BOARD SHAPE & FIBERGLASS GLOSS --- */
+.board {
+  position: absolute;
+  left: 1px;
+  top: 0;
+  width: 14px;
+  height: 42px;
+  background: #faf9f6; /* Ivory/Cream White Base */
+  border-radius: 50% 50% 35% 35% / 80% 80% 20% 20%;
+  box-shadow:
+    inset -1px -2px 3px rgba(0, 0, 0, 0.12),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* --- WOODEN STRINGER --- */
+.stringer {
+  position: absolute;
+  left: calc(50% - 0.5px);
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: #8d6e63; /* Natural wood tone */
+  opacity: 0.85;
+  z-index: 4;
+}
+
+/* --- RETRO ACCENT STRIPES --- */
+.stripeTeal {
+  position: absolute;
+  left: -10px;
+  top: 14px;
+  width: 30px;
+  height: 8px;
+  background: #00acc1; /* Cool retro teal */
+  transform: rotate(-35deg);
+  z-index: 3;
+}
+
+.stripeOrange {
+  position: absolute;
+  left: -10px;
+  top: 20px;
+  width: 30px;
+  height: 6px;
+  background: #ff5722; /* Vivid retro orange */
+  transform: rotate(-35deg);
+  z-index: 3;
+}
+
+.stripeYellow {
+  position: absolute;
+  left: -10px;
+  top: 25px;
+  width: 30px;
+  height: 5px;
+  background: #ffb300; /* Warm retro gold */
+  transform: rotate(-35deg);
+  z-index: 3;
+}
+
+/* --- GLOSS / REFLECTION EFFECT --- */
+.gloss {
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  width: 4px;
+  height: 38px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  border-radius: 80% 20% 20% 80% / 50%;
+  pointer-events: none;
+  z-index: 5;
+}

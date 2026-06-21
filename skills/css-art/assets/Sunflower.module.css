@@ -1,0 +1,123 @@
+.sunflower {
+  position: relative;
+  width: 48px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Shift flower up slightly so the stem anchors nicely at the bottom */
+  transform: translateY(-4px);
+}
+
+/* --- THE BROWN CENTER --- */
+.center {
+  width: 22px;
+  height: 22px;
+  background: #3e2723; /* Deep brown */
+  border-radius: 50%;
+  position: absolute;
+  z-index: 3;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.8), 0 1px 3px rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Dotted seed texture */
+.seeds {
+  position: absolute;
+  inset: 2px;
+  border-radius: 50%;
+  background-image: radial-gradient(#1a1005 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.8;
+}
+
+/* A ring of tiny orange dots at the edge of the center (florets) */
+.details {
+  position: absolute;
+  inset: -1px;
+  border-radius: 50%;
+  border: 2px dotted #f57f17;
+  opacity: 0.9;
+}
+
+
+/* --- THE PETALS --- */
+.petalsBack,
+.petalsFront {
+  position: absolute;
+  top: calc(50% - 19px); /* Center the 38px tall petals */
+  left: calc(50% - 19px);
+  width: 38px;
+  height: 38px;
+}
+
+.petalsBack {
+  z-index: 1;
+}
+
+.petalsFront {
+  z-index: 2;
+}
+
+/* Double-ended oval acts as two petals perfectly opposite each other */
+.petalBack,
+.petalFront {
+  position: absolute;
+  width: 10px;
+  height: 38px;
+  left: 14px; /* Centered in the 38px wide container */
+  top: 0;
+  border-radius: 50%;
+}
+
+/* The back layer of petals are slightly darker and wider */
+.petalBack {
+  width: 12px;
+  left: 13px;
+  background: linear-gradient(to bottom, #fbc02d 0%, #f57f17 25%, #e65100 50%, #f57f17 75%, #fbc02d 100%);
+}
+
+/* The front layer of petals are bright yellow/gold */
+.petalFront {
+  background: linear-gradient(to bottom, #ffee58 0%, #ffc107 35%, #ff9800 50%, #ffc107 65%, #ffee58 100%);
+  box-shadow: inset 0 0 2px rgba(0,0,0,0.1);
+}
+
+
+/* --- STEM AND LEAVES --- */
+.stem {
+  position: absolute;
+  bottom: -4px;
+  width: 4px;
+  height: 28px;
+  background: #33691e;
+  border-radius: 2px;
+  z-index: 0;
+}
+
+.leafLeft,
+.leafRight {
+  position: absolute;
+  background: #4caf50;
+  box-shadow: inset -1px -1px 2px rgba(0,0,0,0.2);
+}
+
+.leafLeft {
+  top: 10px;
+  left: -8px;
+  width: 10px;
+  height: 6px;
+  border-radius: 100% 0 100% 0;
+  transform: rotate(20deg);
+}
+
+.leafRight {
+  top: 12px; /* Adjusted to align better with the stem */
+  right: -8px; /* Adjusted to attach to the stem properly */
+  width: 10px; /* Reduced width slightly to match the left leaf better */
+  height: 6px; /* Adjusted height to match */
+  border-radius: 0 100% 0 100%;
+  transform: rotate(-15deg);
+}

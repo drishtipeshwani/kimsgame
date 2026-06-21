@@ -1,0 +1,222 @@
+.bonfireWrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  overflow: hidden;
+}
+
+/* --- GLOWS & EMBERS --- */
+.ambientGlow {
+  position: absolute;
+  bottom: 0px;
+  left: 4px;
+  width: 40px;
+  height: 18px;
+  background: radial-gradient(circle, rgba(244, 67, 54, 0.5) 0%, rgba(255, 152, 0, 0.2) 50%, rgba(0, 0, 0, 0) 80%);
+  filter: blur(2.5px);
+  z-index: 1;
+}
+
+.embers {
+  position: absolute;
+  bottom: 6px;
+  left: 17px;
+  width: 14px;
+  height: 6px;
+  background: radial-gradient(circle, #ffeb3b 10%, #ff5722 80%);
+  border-radius: 50%;
+  filter: blur(1px);
+  box-shadow: 0 0 5px #ff5722, 0 0 8px #ffeb3b;
+  z-index: 4;
+}
+
+/* --- THE LOGS --- */
+.logBack {
+  position: absolute;
+  bottom: 4px;
+  left: 15px;
+  width: 18px;
+  height: 5px;
+  background: linear-gradient(to right, #27120f, #3e2723, #27120f);
+  border-radius: 2px;
+  z-index: 2;
+}
+
+.logLeft {
+  position: absolute;
+  bottom: 5px;
+  left: 9px;
+  width: 20px;
+  height: 6px;
+  background: linear-gradient(to bottom, #5d4037, #3e2723);
+  border-radius: 3px;
+  transform: rotate(-22deg);
+  z-index: 5;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.logRight {
+  position: absolute;
+  bottom: 5px;
+  right: 9px;
+  width: 20px;
+  height: 6px;
+  background: linear-gradient(to bottom, #4e342e, #27120f);
+  border-radius: 3px;
+  transform: rotate(22deg);
+  z-index: 5;
+  box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Wood ring ends */
+.logCut {
+  position: absolute;
+  top: 1px;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #8d6e63 40%, #5d4037 80%);
+  border-radius: 50%;
+}
+.logLeft .logCut {
+  left: 1px;
+}
+.logRight .logCut {
+  right: 1px;
+}
+
+/* --- THE FLAMES --- */
+.flameMain {
+  position: absolute;
+  bottom: 9px;
+  width: 14px;
+  height: 24px;
+  background: linear-gradient(180deg, #ffeb3b 10%, #ff9800 60%, #f44336 100%);
+  border-radius: 50% 50% 35% 35% / 80% 80% 20% 20%;
+  filter: drop-shadow(0 0 3px rgba(255, 152, 0, 0.8));
+  z-index: 6;
+  animation: flickerMain 1.2s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+}
+
+.flameBackLeft {
+  position: absolute;
+  bottom: 10px;
+  left: 13px;
+  width: 10px;
+  height: 18px;
+  background: linear-gradient(180deg, #ffb74d 20%, #e64a19 90%);
+  border-radius: 50% 50% 35% 35% / 80% 80% 20% 20%;
+  transform: rotate(-20deg);
+  z-index: 3;
+  opacity: 0.9;
+  animation: flickerSideLeft 1.4s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+}
+
+.flameBackRight {
+  position: absolute;
+  bottom: 10px;
+  right: 13px;
+  width: 10px;
+  height: 18px;
+  background: linear-gradient(180deg, #ffb74d 20%, #e64a19 90%);
+  border-radius: 50% 50% 35% 35% / 80% 80% 20% 20%;
+  transform: rotate(20deg);
+  z-index: 3;
+  opacity: 0.9;
+  animation: flickerSideRight 1.5s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+}
+
+.flameInner {
+  position: absolute;
+  bottom: 9px;
+  width: 6px;
+  height: 12px;
+  background: #fffde7;
+  border-radius: 50% 50% 40% 40% / 80% 80% 20% 20%;
+  box-shadow: 0 0 4px #fff;
+  z-index: 7;
+  opacity: 0.95;
+  animation: flickerMain 1s ease-in-out infinite alternate-reverse;
+  transform-origin: bottom center;
+}
+
+/* --- SPARKS --- */
+.sparkOne,
+.sparkTwo,
+.sparkThree {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #ffee58;
+  border-radius: 50%;
+  box-shadow: 0 0 3px #ff9800;
+  z-index: 8;
+}
+
+.sparkOne {
+  left: 16px;
+  animation: sparkRise 2s infinite linear;
+}
+
+.sparkTwo {
+  right: 15px;
+  animation: sparkRise 1.6s infinite linear 0.4s;
+}
+
+.sparkThree {
+  left: 23px;
+  animation: sparkRise 2.2s infinite linear 0.8s;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes flickerMain {
+  0% {
+    transform: scale(0.95) rotate(-1deg);
+  }
+  100% {
+    transform: scale(1.05) rotate(1deg);
+  }
+}
+
+@keyframes flickerSideLeft {
+  0% {
+    transform: rotate(-24deg) scale(0.9);
+  }
+  100% {
+    transform: rotate(-16deg) scale(1.05);
+  }
+}
+
+@keyframes flickerSideRight {
+  0% {
+    transform: rotate(16deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(24deg) scale(0.9);
+  }
+}
+
+@keyframes sparkRise {
+  0% {
+    bottom: 12px;
+    opacity: 0;
+    transform: translateX(0px);
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    bottom: 38px;
+    opacity: 0;
+    transform: translateX(3px);
+  }
+}

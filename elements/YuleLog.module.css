@@ -1,0 +1,176 @@
+.yuleWrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- DROP SHADOW --- */
+.shadow {
+  position: absolute;
+  bottom: 4px;
+  left: 3px;
+  width: 42px;
+  height: 5px;
+  background: rgba(38, 19, 8, 0.4);
+  border-radius: 50%;
+  filter: blur(1.5px);
+  z-index: 0;
+}
+
+/* --- MAIN CHOCOLATE LOG BODY --- */
+.logBody {
+  position: absolute;
+  left: 12px;
+  top: 22px;
+  width: 28px;
+  height: 18px;
+  background: linear-gradient(to bottom, #3a1a0e 0%, #4e2513 30%, #5d2f19 50%, #3a1a0e 85%, #251008 100%);
+  border-radius: 0 9px 9px 0;
+  box-shadow: inset -2px -2px 4px rgba(0,0,0,0.4), inset 1px 2px 3px rgba(255,255,255,0.1);
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* Bark texture details */
+.barkTexture {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to right, rgba(0,0,0,0.18) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0,0,0,0.2) 1px, transparent 1px);
+  background-size: 5px 3px;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  border-radius: 0 9px 9px 0;
+}
+
+/* --- SWISS ROLL SPIRAL CUT FACE --- */
+.cutFace {
+  position: absolute;
+  left: 6px;
+  top: 22px;
+  width: 12px;
+  height: 18px;
+  background: radial-gradient(ellipse at 50% 50%,
+    #fffdf0 0%, #fffdf0 11%,
+    #5c2e16 12%, #5c2e16 26%,
+    #fffdf0 27%, #fffdf0 42%,
+    #5c2e16 43%, #5c2e16 57%,
+    #fffdf0 58%, #fffdf0 72%,
+    #251008 73%, #251008 100%
+  );
+  border: 1px solid #1a0a04;
+  border-radius: 50%;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  z-index: 3;
+}
+
+/* --- BRANCH STUB --- */
+.branch {
+  position: absolute;
+  left: 25px;
+  top: 13px;
+  width: 9px;
+  height: 10px;
+  background: linear-gradient(to right, #3a1a0e, #5d2f19, #251008);
+  border-radius: 2px 2px 0 0;
+  z-index: 1;
+  transform: rotate(10deg);
+}
+
+/* Branch cut showing concentric rings */
+.branchCut {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 9px;
+  height: 5px;
+  background: radial-gradient(ellipse at 50% 50%,
+    #fffdf0 0%, #fffdf0 15%,
+    #5c2e16 16%, #5c2e16 45%,
+    #fffdf0 46%, #fffdf0 70%,
+    #251008 71%, #251008 100%
+  );
+  border: 0.5px solid #1a0a04;
+  border-radius: 50%;
+}
+
+/* --- HOLLY LEAVES --- */
+.leafLeft {
+  position: absolute;
+  left: 13px;
+  top: 15px;
+  width: 11px;
+  height: 7px;
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  border-radius: 50% 0 50% 0;
+  transform: rotate(-25deg);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  z-index: 4;
+}
+
+.leafRight {
+  position: absolute;
+  left: 20px;
+  top: 14px;
+  width: 11px;
+  height: 7px;
+  background: linear-gradient(135deg, #388e3c, #1b5e20);
+  border-radius: 0 50% 0 50%;
+  transform: rotate(15deg);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  z-index: 4;
+}
+
+/* --- GLOSSY RED BERRIES --- */
+.berry1,
+.berry2,
+.berry3 {
+  position: absolute;
+  background: radial-gradient(circle at 1px 1px, #ff5252, #d32f2f 40%, #800d0d 100%);
+  border-radius: 50%;
+  box-shadow: 0 0.5px 1px rgba(0,0,0,0.3);
+  z-index: 5;
+}
+
+.berry1 {
+  left: 18px;
+  top: 18px;
+  width: 4px;
+  height: 4px;
+}
+
+.berry2 {
+  left: 21px;
+  top: 17px;
+  width: 3.5px;
+  height: 3.5px;
+}
+
+.berry3 {
+  left: 19px;
+  top: 20px;
+  width: 3.5px;
+  height: 3.5px;
+}
+
+/* --- SUGAR POWDER PARTICLES --- */
+.sugar {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.95);
+  left: 15px;
+  top: 18px;
+  z-index: 6;
+  box-shadow:
+    3px -1px 0 rgba(255,255,255,0.9),
+    8px -3px 0 rgba(255,255,255,0.85),
+    14px 1px 0 rgba(255,255,255,0.95),
+    18px 2px 0 rgba(255,255,255,0.7),
+    2px 5px 0 rgba(255,255,255,0.8),
+    11px 4px 0 rgba(255,255,255,0.95),
+    -5px 3px 0 rgba(255,255,255,0.6);
+}
