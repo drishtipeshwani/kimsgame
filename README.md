@@ -1,17 +1,18 @@
 # Kim's Game
 
-A browser-based memory game inspired by the classic observation exercise from *Kim* (Rudyard Kipling). Study a tray of objects, then recall as many as you can before time runs out.
+A browser-based memory game inspired by the classic observation exercise from *Kim* (Rudyard Kipling). Study a box of objects, then recall as many as you can before time runs out.
 
-Built with **Next.js**, **React**, and **pure CSS art** — every object on the tray is rendered with HTML and CSS, no images.
+Built with **Next.js**, **React**, and **pure CSS art** — every object in the box is rendered with HTML and CSS, no images.
 
 ## How to Play
 
 1. Choose a theme (**Summer Solstice** or **Winter Solstice**) and a difficulty on the home screen.
-2. **Memorize** — 20 objects are placed on the tray. You have **60 seconds** (Easy) or **30 seconds** (Hard) to study them.
-3. **Recall** — The tray closes. Type everything you remember within **60 seconds**. Separate items with commas or new lines.
+2. **Memorize** — 20 objects are placed in the box. You have **60 seconds** (Easy) or **30 seconds** (Hard) to study them.
+3. **Recall** — The box closes. Type everything you remember within **60 seconds**. Separate items with commas or new lines.
 4. **Score** — You earn **+1 point per correct item**. Wrong guesses do not reduce your score. Your highest score is saved locally in the browser.
+5. **Review** — Tap **Review Round** to open a side drawer listing every correct, wrong, and missed item from that round.
 
-Open the **Rules** drawer from the home screen for a quick summary.
+Open the **Rules** drawer from the home screen for a quick summary (including a link to the classic [Kim's Game](https://en.wikipedia.org/wiki/Kim%27s_Game) observation exercise).
 
 ## Features
 
@@ -19,7 +20,8 @@ Open the **Rules** drawer from the home screen for a quick summary.
 - **Easy / Hard** difficulty (memorize time only; recall time is always 60 seconds)
 - **Fuzzy answer matching** — plurals, spacing, and hyphenation are normalized (e.g. `snow man`, `snow-man`, and `Snow Man` all match)
 - **Synonym support** — common alternate names count as correct
-- **Animated tray** — lid closes between memorize and recall phases
+- **Animated box** — lid closes between memorize and recall phases
+- **Round review** — after scoring, open a themed side drawer to see correct, wrong, and missed items listed by name
 - **Local high score** — persisted via `localStorage`
 
 ## Getting Started
@@ -55,12 +57,13 @@ app/                  Next.js App Router pages
   page.tsx            Home screen
   play/page.tsx       Game screen (?theme=summer|winter&difficulty=easy|hard)
   favicon.ico         App icon
-components/           UI — HomeScreen, Game, Tray, Timer, RecallInput, Results, RulesModal, …
+components/           UI — HomeScreen, Game, Box, Timer, RecallInput, Results, ReviewModal, RulesModal, …
 elements/             One React component + CSS module per game object
   shared.module.css   Shared layout wrapper used by all element components
 lib/
   elementTypes.ts     Shared TypeScript types (ElementMeta, Theme, …)
   elementRegistry.ts  Theme definitions (summer + winter)
+  themeModalVars.ts   Shared summer/winter palette for Rules and Review drawers
   summerElements.ts   Summer element metadata & component imports
   winterElements.ts   Winter element metadata & component imports
   gameLogic.ts        Round setup, random selection, input parsing
@@ -71,6 +74,7 @@ scripts/
   summer-solstice-elements.ts   Canonical summer element name list
   winter-solstice-elements.ts   Canonical winter element name list
   generate-css-art.ts           AI-assisted element generation (optional)
+themes/               Theme reference docs (summer-solstice.md, winter-solstice.md)
 skills/css-art/       CSS art generation skill & reference assets (SKILL.md, assets/)
 ```
 
@@ -133,4 +137,5 @@ Output is written to `elements/`. After generating, register new elements in the
 - Score = number of uniquely matched correct items
 - Duplicate guesses for the same item only count once
 - Wrong guesses are reported in results but do not affect the score
+- After each round, **Review Round** opens a side drawer with three lists: correct matches, wrong guesses, and missed box items
 - Answers are matched against each element's `name`, `id`, and `synonyms` after normalization

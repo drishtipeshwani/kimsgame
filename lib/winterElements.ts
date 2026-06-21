@@ -152,7 +152,7 @@ export const WINTER_ELEMENTS: ElementMeta[] = [
   {
     id: "star-ornament",
     name: "Star Ornament",
-    synonyms: ["star ornament", "star", "tree topper", "decoration", "bauble"],
+    synonyms: ["star ornament", "star", "tree topper", "decoration"],
     Component: StarOrnament,
   },
   {
@@ -224,7 +224,7 @@ export const WINTER_ELEMENTS: ElementMeta[] = [
   {
     id: "yule-log",
     name: "Yule Log",
-    synonyms: ["yule log", "log", "firewood", "bûche de noël"],
+    synonyms: ["yule log", "log", "firewood"],
     Component: YuleLog,
   },
 ];

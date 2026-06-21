@@ -16,7 +16,7 @@ const luckiestGuy = Luckiest_Guy({
 
 export const metadata: Metadata = {
   title: "Kim's Game",
-  description: "Memorize the objects on the tray and recall them before time runs out.",
+  description: "Memorize the objects in the box and recall them before time runs out.",
 };
 
 export default function RootLayout({

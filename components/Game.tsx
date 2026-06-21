@@ -8,7 +8,7 @@ import RecallInput from "@/components/RecallInput";
 import Results from "@/components/Results";
 import ReviewModal from "@/components/ReviewModal";
 import Timer from "@/components/Timer";
-import Tray, { TRAY_CLOSE_ANIMATION_MS } from "@/components/Tray";
+import Box, { BOX_CLOSE_ANIMATION_MS } from "@/components/Box";
 import { THEMES, type ElementMeta, type ThemeId } from "@/lib/elementRegistry";
 import {
   RECALL_SECONDS,
@@ -40,8 +40,8 @@ export default function Game({ themeId, difficulty }: GameProps) {
   const [scoreResult, setScoreResult] = useState<ScoreResult | null>(null);
   const [isNewRecord, setIsNewRecord] = useState(false);
   const [timerKey, setTimerKey] = useState(0);
-  const [memorizeTrayOpen, setMemorizeTrayOpen] = useState(true);
-  const [isClosingTray, setIsClosingTray] = useState(false);
+  const [memorizeBoxOpen, setMemorizeBoxOpen] = useState(true);
+  const [isClosingBox, setIsClosingBox] = useState(false);
   const [reviewOpen, setReviewOpen] = useState(false);
   const recallTransitionStarted = useRef(false);
 
@@ -58,8 +58,8 @@ export default function Game({ themeId, difficulty }: GameProps) {
     setRecallText("");
     setScoreResult(null);
     setIsNewRecord(false);
-    setMemorizeTrayOpen(true);
-    setIsClosingTray(false);
+    setMemorizeBoxOpen(true);
+    setIsClosingBox(false);
     setReviewOpen(false);
     recallTransitionStarted.current = false;
     setTimerKey((key) => key + 1);
@@ -71,30 +71,30 @@ export default function Game({ themeId, difficulty }: GameProps) {
     recallTransitionStarted.current = true;
     setPhase("recall");
     setTimerKey((key) => key + 1);
-    setMemorizeTrayOpen(true);
-    setIsClosingTray(false);
+    setMemorizeBoxOpen(true);
+    setIsClosingBox(false);
   }, []);
 
   const handleMemorizeComplete = useCallback(() => {
-    if (isClosingTray) return;
-    setIsClosingTray(true);
-    setMemorizeTrayOpen(false);
-  }, [isClosingTray]);
+    if (isClosingBox) return;
+    setIsClosingBox(true);
+    setMemorizeBoxOpen(false);
+  }, [isClosingBox]);
 
-  const handleMemorizeTrayCloseComplete = useCallback(() => {
+  const handleMemorizeBoxCloseComplete = useCallback(() => {
     beginRecall();
   }, [beginRecall]);
 
   // Fallback if lid animationend does not fire
   useEffect(() => {
-    if (!isClosingTray) return;
+    if (!isClosingBox) return;
 
     const timeoutId = window.setTimeout(() => {
       beginRecall();
-    }, TRAY_CLOSE_ANIMATION_MS);
+    }, BOX_CLOSE_ANIMATION_MS);
 
     return () => window.clearTimeout(timeoutId);
-  }, [isClosingTray, beginRecall]);
+  }, [isClosingBox, beginRecall]);
 
   const handleSubmitRecall = useCallback(() => {
     if (!roundElements) return;
@@ -125,7 +125,7 @@ export default function Game({ themeId, difficulty }: GameProps) {
         <header className={styles.header}>
           <h1 className={`luckiest-guy-regular ${styles.title}`}>Kim&apos;s Game</h1>
           <p className={styles.subtitle}>
-            Memorize the objects on the tray, then recall as many as you can.
+            Memorize the objects in the box, then recall as many as you can.
           </p>
         </header>
       )}
@@ -137,7 +137,7 @@ export default function Game({ themeId, difficulty }: GameProps) {
               key={`memorize-${timerKey}`}
               compact
               seconds={memorizeSeconds}
-              active={roundElements !== null && !isClosingTray}
+              active={roundElements !== null && !isClosingBox}
               onComplete={handleMemorizeComplete}
               label="Memorize"
             />
@@ -150,7 +150,7 @@ export default function Game({ themeId, difficulty }: GameProps) {
               type="button"
               className={styles.skipButton}
               onClick={handleMemorizeComplete}
-              disabled={!roundElements || isClosingTray}
+              disabled={!roundElements || isClosingBox}
             >
               I&apos;m Ready — Start Recall
             </button>
@@ -158,16 +158,16 @@ export default function Game({ themeId, difficulty }: GameProps) {
 
           <div className={styles.memorizeSpacer} aria-hidden="true" />
 
-          <div className={styles.traySlot}>
-            <Tray
-              open={memorizeTrayOpen}
+          <div className={styles.boxSlot}>
+            <Box
+              open={memorizeBoxOpen}
               memorize
               onCloseAnimationComplete={
-                isClosingTray ? handleMemorizeTrayCloseComplete : undefined
+                isClosingBox ? handleMemorizeBoxCloseComplete : undefined
               }
             >
               {roundElements && <ElementGrid elements={roundElements} />}
-            </Tray>
+            </Box>
           </div>
         </section>
       )}

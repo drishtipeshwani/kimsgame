@@ -1,230 +1,230 @@
 import type { ElementMeta } from "./elementTypes";
 
-import ChristmasTree from "@/elements/ChristmasTree";
-import LightCandles from "@/elements/LightCandles";
-import CoffeeMug from "@/elements/CoffeeMug";
-import CinnamonSticks from "@/elements/CinnamonSticks";
-import Lantern from "@/elements/Lantern";
-import Book from "@/elements/Book";
-import CinnamonRoll from "@/elements/CinnamonRoll";
+import Sunflower from "@/elements/Sunflower";
+import Butterfly from "@/elements/Butterfly";
+import OrangeSlice from "@/elements/OrangeSlice";
+import IcedCitrusTea from "@/elements/IcedCitrusTea";
+import Honeybee from "@/elements/Honeybee";
+import WatermelonSlice from "@/elements/WatermelonSlice";
+import Cherries from "@/elements/Cherries";
+import Plum from "@/elements/Plum";
+import Crystal from "@/elements/Crystal";
+import SeaShell from "@/elements/SeaShell";
+import Sunglasses from "@/elements/Sunglasses";
+import Icecream from "@/elements/Icecream";
+import SunHat from "@/elements/SunHat";
+import Blueberries from "@/elements/Blueberries";
+import Strawberry from "@/elements/Strawberry";
+import Sandcastle from "@/elements/Sandcastle";
+import PicnicBasket from "@/elements/PicnicBasket";
+import FlipFlops from "@/elements/FlipFlops";
+import YellowCandle from "@/elements/YellowCandle";
+import WateringCan from "@/elements/WateringCan";
+import BlueBird from "@/elements/BlueBird";
+import Popsicle from "@/elements/Popsicle";
+import Lemons from "@/elements/Lemons";
 import Bonfire from "@/elements/Bonfire";
-import GingerbreadCookie from "@/elements/GingerbreadCookie";
-import Sweater from "@/elements/Sweater";
-import ApplePie from "@/elements/ApplePie";
-import Beanie from "@/elements/Beanie";
-import JingleBells from "@/elements/JingleBells";
-import Scarf from "@/elements/Scarf";
-import WoolSocks from "@/elements/WoolSocks";
-import SnowBoots from "@/elements/SnowBoots";
-import Thermos from "@/elements/Thermos";
-import SnowGlobe from "@/elements/SnowGlobe";
-import SnowMan from "@/elements/SnowMan";
-import StarOrnament from "@/elements/StarOrnament";
-import CandyCane from "@/elements/CandyCane";
-import Squirrel from "@/elements/Squirrel";
-import RoastedChestnut from "@/elements/RoastedChestnut";
-import ToastedMarshmallowOnAStick from "@/elements/ToastedMarshmallowOnAStick";
-import Clove from "@/elements/Clove";
-import Ribbon from "@/elements/Ribbon";
-import TeaBag from "@/elements/TeaBag";
-import HoneyJar from "@/elements/HoneyJar";
-import BreadBasket from "@/elements/BreadBasket";
-import EarMuffs from "@/elements/EarMuffs";
-import SugarCookies from "@/elements/SugarCookies";
-import YuleLog from "@/elements/YuleLog";
+import StoryBook from "@/elements/StoryBook";
+import TropicalTree from "@/elements/TropicalTree";
+import Lavender from "@/elements/Lavender";
+import Mango from "@/elements/Mango";
+import CampingTent from "@/elements/CampingTent";
+import Bicycle from "@/elements/Bicycle";
+import Surfboard from "@/elements/Surfboard";
+import Jar from "@/elements/Jar";
 
-/** All winter solstice elements — game rounds pick 20 at random from this pool. */
-export const WINTER_ELEMENTS: ElementMeta[] = [
+/** All summer solstice elements — game rounds pick 20 at random from this pool. */
+export const SUMMER_ELEMENTS: ElementMeta[] = [
   {
-    id: "christmas-tree",
-    name: "Christmas Tree",
-    synonyms: ["christmas tree", "pine tree", "fir tree", "evergreen", "tree"],
-    Component: ChristmasTree,
+    id: "sunflower",
+    name: "Sunflower",
+    synonyms: ["sunflower", "yellow flower", "bloom", "blossom"],
+    Component: Sunflower,
   },
   {
-    id: "light-candles",
-    name: "Light Candles",
-    synonyms: ["light candles", "candles", "lit candles", "flames", "wax"],
-    Component: LightCandles,
+    id: "butterfly",
+    name: "Butterfly",
+    synonyms: ["butterfly", "bug", "insect", "caterpillar"],
+    Component: Butterfly,
   },
   {
-    id: "coffee-mug",
-    name: "Coffee Mug",
-    synonyms: ["coffee mug", "mug", "cup", "coffee cup"],
-    Component: CoffeeMug,
+    id: "orange-slice",
+    name: "Orange Slice",
+    synonyms: ["orange slice", "orange", "citrus wedge", "citrus"],
+    Component: OrangeSlice,
   },
   {
-    id: "cinnamon-sticks",
-    name: "Cinnamon Sticks",
-    synonyms: ["cinnamon sticks", "cinnamon", "spice", "cinnamon quill"],
-    Component: CinnamonSticks,
+    id: "iced-citrus-tea",
+    name: "Iced Citrus Tea",
+    synonyms: ["iced citrus tea", "iced tea", "cold tea", "lemon tea", "beverage"],
+    Component: IcedCitrusTea,
   },
   {
-    id: "lantern",
-    name: "Lantern",
-    synonyms: ["lantern", "lamp", "light", "oil lamp"],
-    Component: Lantern,
+    id: "honeybee",
+    name: "Honeybee",
+    synonyms: ["honeybee", "bee", "bumblebee", "pollinator"],
+    Component: Honeybee,
   },
   {
-    id: "book",
-    name: "Book",
-    synonyms: ["book", "novel", "hardcover", "reading book"],
-    Component: Book,
+    id: "watermelon-slice",
+    name: "Watermelon Slice",
+    synonyms: ["watermelon slice", "watermelon", "melon", "fruit slice"],
+    Component: WatermelonSlice,
   },
   {
-    id: "cinnamon-roll",
-    name: "Cinnamon Roll",
-    synonyms: ["cinnamon roll", "sweet roll", "cinnamon bun", "pastry", "sticky bun"],
-    Component: CinnamonRoll,
+    id: "cherries",
+    name: "Cherries",
+    synonyms: ["cherries", "cherry", "red fruit", "stone fruit"],
+    Component: Cherries,
+  },
+  {
+    id: "plum",
+    name: "Plum",
+    synonyms: ["plum", "prune", "stone fruit", "purple fruit"],
+    Component: Plum,
+  },
+  {
+    id: "crystal",
+    name: "Crystal",
+    synonyms: ["crystal", "gem", "gemstone", "quartz", "mineral"],
+    Component: Crystal,
+  },
+  {
+    id: "sea-shell",
+    name: "Sea Shell",
+    synonyms: ["sea shell", "seashell", "shell", "conch", "clam"],
+    Component: SeaShell,
+  },
+  {
+    id: "sunglasses",
+    name: "Sunglasses",
+    synonyms: ["sunglasses", "shades", "glasses", "sunnies"],
+    Component: Sunglasses,
+  },
+  {
+    id: "icecream",
+    name: "Icecream",
+    synonyms: ["icecream", "ice cream", "gelato", "cone", "soft serve"],
+    Component: Icecream,
+  },
+  {
+    id: "sun-hat",
+    name: "Sun Hat",
+    synonyms: ["sun hat", "straw hat", "hat", "wide brim hat"],
+    Component: SunHat,
+  },
+  {
+    id: "blueberries",
+    name: "Blueberries",
+    synonyms: ["blueberries", "blueberry", "berries", "blue berry"],
+    Component: Blueberries,
+  },
+  {
+    id: "strawberry",
+    name: "Strawberry",
+    synonyms: ["strawberry", "berry", "red berry", "strawberries"],
+    Component: Strawberry,
+  },
+  {
+    id: "sandcastle",
+    name: "Sandcastle",
+    synonyms: ["sandcastle", "sand fort", "sand building", "sand castle"],
+    Component: Sandcastle,
+  },
+  {
+    id: "picnic-basket",
+    name: "Picnic Basket",
+    synonyms: ["picnic basket", "basket", "hamper", "woven basket"],
+    Component: PicnicBasket,
+  },
+  {
+    id: "flip-flops",
+    name: "Flip Flops",
+    synonyms: ["flip flops", "sandals", "slippers", "thongs", "shoes"],
+    Component: FlipFlops,
+  },
+  {
+    id: "yellow-candle",
+    name: "Yellow Candle",
+    synonyms: ["yellow candle", "candle", "wax candle", "tealight"],
+    Component: YellowCandle,
+  },
+  {
+    id: "watering-can",
+    name: "Watering Can",
+    synonyms: ["watering can", "sprinkler", "pitcher", "water jug"],
+    Component: WateringCan,
+  },
+  {
+    id: "blue-bird",
+    name: "Blue Bird",
+    synonyms: ["blue bird", "bluebird", "bird", "songbird"],
+    Component: BlueBird,
+  },
+  {
+    id: "popsicle",
+    name: "Popsicle",
+    synonyms: ["popsicle", "ice pop", "ice lolly", "freezie", "frozen treat"],
+    Component: Popsicle,
+  },
+  {
+    id: "lemons",
+    name: "Lemons",
+    synonyms: ["lemons", "lemon", "citrus", "yellow fruit"],
+    Component: Lemons,
   },
   {
     id: "bonfire",
     name: "Bonfire",
-    synonyms: ["bonfire", "campfire", "fire", "hearth", "flames"],
+    synonyms: ["bonfire", "campfire", "fire", "flames"],
     Component: Bonfire,
   },
   {
-    id: "gingerbread-cookie",
-    name: "Gingerbread Cookie",
-    synonyms: ["gingerbread cookie", "gingerbread man", "biscuit", "gingerbread"],
-    Component: GingerbreadCookie,
+    id: "story-book",
+    name: "Story Book",
+    synonyms: ["story book", "book", "novel", "tale", "storybook"],
+    Component: StoryBook,
   },
   {
-    id: "sweater",
-    name: "Sweater",
-    synonyms: ["sweater", "jumper", "pullover", "cardigan", "knitwear"],
-    Component: Sweater,
+    id: "tropical-tree",
+    name: "Tropical Tree",
+    synonyms: ["tropical tree", "palm tree", "palm", "coconut tree"],
+    Component: TropicalTree,
   },
   {
-    id: "apple-pie",
-    name: "Apple Pie",
-    synonyms: ["apple pie", "pie", "fruit pie", "baked good", "tart"],
-    Component: ApplePie,
+    id: "lavender",
+    name: "Lavender",
+    synonyms: ["lavender", "purple flower", "herb", "lilac"],
+    Component: Lavender,
   },
   {
-    id: "beanie",
-    name: "Beanie",
-    synonyms: ["beanie", "winter hat", "toque", "knit cap", "hat"],
-    Component: Beanie,
+    id: "mango",
+    name: "Mango",
+    synonyms: ["mango", "tropical fruit", "stone fruit"],
+    Component: Mango,
   },
   {
-    id: "jingle-bells",
-    name: "Jingle Bells",
-    synonyms: ["jingle bells", "bells", "sleigh bells", "chimes"],
-    Component: JingleBells,
+    id: "camping-tent",
+    name: "Camping Tent",
+    synonyms: ["camping tent", "tent", "shelter", "camp"],
+    Component: CampingTent,
   },
   {
-    id: "scarf",
-    name: "Scarf",
-    synonyms: ["scarf", "muffler", "neck wrap", "neck warmer"],
-    Component: Scarf,
+    id: "bicycle",
+    name: "Bicycle",
+    synonyms: ["bicycle", "bike", "cycle", "two-wheeler"],
+    Component: Bicycle,
   },
   {
-    id: "wool-socks",
-    name: "Wool Socks",
-    synonyms: ["wool socks", "socks", "warm socks", "stockings"],
-    Component: WoolSocks,
+    id: "surfboard",
+    name: "Surfboard",
+    synonyms: ["surfboard", "board", "wave board", "skurfboard"],
+    Component: Surfboard,
   },
   {
-    id: "snow-boots",
-    name: "Snow Boots",
-    synonyms: ["snow boots", "winter boots", "boots", "footwear", "galoshes"],
-    Component: SnowBoots,
-  },
-  {
-    id: "thermos",
-    name: "Thermos",
-    synonyms: ["thermos", "flask", "vacuum flask", "insulated bottle"],
-    Component: Thermos,
-  },
-  {
-    id: "snow-globe",
-    name: "Snow Globe",
-    synonyms: ["snow globe", "snowglobe", "water globe", "snowdome"],
-    Component: SnowGlobe,
-  },
-  {
-    id: "snow-man",
-    name: "Snow Man",
-    synonyms: ["snowman", "snow man", "frosty", "snow figure"],
-    Component: SnowMan,
-  },
-  {
-    id: "star-ornament",
-    name: "Star Ornament",
-    synonyms: ["star ornament", "star", "tree topper", "decoration", "bauble"],
-    Component: StarOrnament,
-  },
-  {
-    id: "candy-cane",
-    name: "Candy Cane",
-    synonyms: ["candy cane", "peppermint stick", "mint candy", "striped candy"],
-    Component: CandyCane,
-  },
-  {
-    id: "squirrel",
-    name: "Squirrel",
-    synonyms: ["squirrel", "rodent", "chipmunk", "critter"],
-    Component: Squirrel,
-  },
-  {
-    id: "roasted-chestnut",
-    name: "Roasted Chestnut",
-    synonyms: ["roasted chestnut", "chestnut", "nut", "roasted nut"],
-    Component: RoastedChestnut,
-  },
-  {
-    id: "toasted-marshmallow-on-a-stick",
-    name: "Toasted Marshmallow on a Stick",
-    synonyms: ["toasted marshmallow", "marshmallow", "s'more ingredient", "roasted marshmallow"],
-    Component: ToastedMarshmallowOnAStick,
-  },
-  {
-    id: "clove",
-    name: "Clove",
-    synonyms: ["clove", "spice", "dried clove"],
-    Component: Clove,
-  },
-  {
-    id: "ribbon",
-    name: "Ribbon",
-    synonyms: ["ribbon", "bow", "decorative ribbon", "wrapping ribbon"],
-    Component: Ribbon,
-  },
-  {
-    id: "tea-bag",
-    name: "Tea Bag",
-    synonyms: ["tea bag", "teabag", "tea", "infusion"],
-    Component: TeaBag,
-  },
-  {
-    id: "honey-jar",
-    name: "Honey Jar",
-    synonyms: ["honey jar", "honey", "pot of honey", "honey pot"],
-    Component: HoneyJar,
-  },
-  {
-    id: "bread-basket",
-    name: "Bread Basket",
-    synonyms: ["bread basket", "basket of bread", "rolls", "buns", "loaf"],
-    Component: BreadBasket,
-  },
-  {
-    id: "ear-muffs",
-    name: "Ear Muffs",
-    synonyms: ["ear muffs", "earmuffs", "ear warmers"],
-    Component: EarMuffs,
-  },
-  {
-    id: "sugar-cookies",
-    name: "Sugar Cookies",
-    synonyms: ["sugar cookies", "cookies", "biscuits", "frosted cookies"],
-    Component: SugarCookies,
-  },
-  {
-    id: "yule-log",
-    name: "Yule Log",
-    synonyms: ["yule log", "log", "firewood", "bûche de noël"],
-    Component: YuleLog,
+    id: "jar",
+    name: "Jar",
+    synonyms: ["jar", "glass jar", "mason jar", "container"],
+    Component: Jar,
   },
 ];

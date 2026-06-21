@@ -2,24 +2,24 @@
 
 import { useEffect, useRef, type ReactNode } from "react";
 
-import styles from "./Tray.module.css";
+import styles from "./Box.module.css";
 
-/** Matches `closeLidSmooth` duration in Tray.module.css */
-export const TRAY_CLOSE_ANIMATION_MS = 1200;
+/** Matches `closeLidSmooth` duration in Box.module.css */
+export const BOX_CLOSE_ANIMATION_MS = 1200;
 
-type TrayProps = {
+type BoxProps = {
   open: boolean;
   memorize?: boolean;
   onCloseAnimationComplete?: () => void;
   children?: ReactNode;
 };
 
-export default function Tray({
+export default function Box({
   open,
   memorize = false,
   onCloseAnimationComplete,
   children,
-}: TrayProps) {
+}: BoxProps) {
   const lidRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

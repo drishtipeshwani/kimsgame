@@ -86,11 +86,11 @@ export default function RulesModal({ open, onClose, themeId }: RulesModalProps) 
         </p>
         <ol className={`dongle-light ${styles.rulesList}`}>
           <li>
-            Study the objects on the tray for {getMemorizeSeconds("easy")}{" "}
+            Study the objects in the box for {getMemorizeSeconds("easy")}{" "}
             seconds (Easy) or {getMemorizeSeconds("hard")} seconds (Hard).
           </li>
           <li>
-            The tray closes — type everything you remember within 1 minute.
+            The box closes — type everything you remember within 1 minute.
           </li>
           <li>Score +1 per correct item.</li>
         </ol>

@@ -5,15 +5,15 @@
   --color-green-light: #dbffcb;
   --background: #dbffcb;
   --foreground: #2d2d2d;
-  --tray-bg: #ffffff;
-  --tray-border: #bee4d0;
+  --box-bg: #ffffff;
+  --box-border: #bee4d0;
   --card-shadow: 0 8px 32px rgba(45, 45, 45, 0.12);
   --cardboard: #d8b283;
   --cardboard-mid: #c79a64;
   --cardboard-dark: #a9824f;
   --cardboard-edge: #856237;
 
-  /* Single knob for the square footprint every element occupies in the tray. */
+  /* Single knob for the square footprint every element occupies in the box. */
   --element-size: 56px;
 }
 

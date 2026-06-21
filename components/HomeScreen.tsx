@@ -39,7 +39,7 @@ export default function HomeScreen() {
       <section className={styles.hero}>
         <h1 className={`luckiest-guy-regular ${styles.title}`}>KIM&apos;S GAME</h1>
         <p className={styles.subtitle}>
-          Memorize the objects on the tray, then recall as many as you can.
+          Memorize the objects in the box, then recall as many as you can.
         </p>
       </section>
 
