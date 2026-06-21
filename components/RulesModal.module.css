@@ -59,6 +59,22 @@
   line-height: 1.1;
 }
 
+.intro {
+  font-size: 22px;
+  line-height: 1.35;
+  margin: 0 0 20px;
+}
+
+.introLink {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.introLink:hover {
+  opacity: 0.85;
+}
+
 .rulesList {
   margin: 0;
   padding-left: 24px;
@@ -82,6 +98,10 @@
 
   .title {
     font-size: 28px;
+  }
+
+  .intro {
+    font-size: 20px;
   }
 
   .rulesList {

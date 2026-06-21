@@ -3,6 +3,7 @@
 import { useEffect, useRef, type CSSProperties } from "react";
 
 import type { ThemeId } from "@/lib/elementRegistry";
+import { getMemorizeSeconds } from "@/lib/gameLogic";
 import { THEME_MODAL_VARS } from "@/lib/themeModalVars";
 
 import styles from "./RulesModal.module.css";
@@ -70,8 +71,24 @@ export default function RulesModal({ open, onClose, themeId }: RulesModalProps) 
         >
           How to Play
         </h2>
+        <p className={`dongle-light ${styles.intro}`}>
+          A digital take on the classic{" "}
+          <a
+            href="https://en.wikipedia.org/wiki/Kim%27s_Game"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.introLink}
+          >
+            Kim&apos;s Game
+          </a>{" "}
+          observation exercise, first described in Rudyard Kipling&apos;s novel{" "}
+          <em>Kim</em>.
+        </p>
         <ol className={`dongle-light ${styles.rulesList}`}>
-          <li>Study the objects on the tray for 1 minute.</li>
+          <li>
+            Study the objects on the tray for {getMemorizeSeconds("easy")}{" "}
+            seconds (Easy) or {getMemorizeSeconds("hard")} seconds (Hard).
+          </li>
           <li>
             The tray closes — type everything you remember within 1 minute.
           </li>
