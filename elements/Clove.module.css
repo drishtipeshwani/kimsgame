@@ -7,119 +7,103 @@
   align-items: center;
 }
 
-/* --- SOFT GROUND SHADOW --- */
+/* Drop Shadow */
 .shadow {
   position: absolute;
   bottom: 4px;
   left: 10px;
   width: 28px;
-  height: 5px;
-  background: rgba(69, 52, 33, 0.18);
+  height: 6px;
+  background: rgba(43, 24, 15, 0.4);
   border-radius: 50%;
   filter: blur(2px);
   z-index: 0;
 }
 
-/* --- ROTATED CLOVE ELEMENT --- */
+/* Clove container tilted for organic display */
 .clove {
   position: relative;
-  width: 36px;
-  height: 36px;
-  transform: rotate(-12deg) translateY(-2px);
+  width: 100%;
+  height: 100%;
+  transform: rotate(25deg);
+  transform-origin: center center;
+}
+
+/* Thin Cylindrical Stem */
+.stem {
+  position: absolute;
+  bottom: 8px;
+  left: calc(50% - 2.5px);
+  width: 5px;
+  height: 24px;
+  background: linear-gradient(to right, #3a1e12 0%, #5c3523 40%, #70422c 60%, #30170c 100%);
+  border-radius: 2px 2px 3px 3px;
+  box-shadow: inset 0 -3px 3px rgba(0, 0, 0, 0.3);
   z-index: 1;
 }
 
-/* --- MAIN FLESHY BODY --- */
-.body {
+/* Central Spherical Corolla (unopened bud) */
+.corolla {
   position: absolute;
-  bottom: 4px;
-  left: 6px;
-  width: 24px;
-  height: 25px;
-  /* Asymmetrical bulb shape representing a natural clove */
-  border-radius: 78% 22% 52% 48% / 80% 20% 80% 20%;
-  /* Layered gradients: Base warmth, purple skin blush, and a soft 3D spherical glow */
-  background: 
-    radial-gradient(circle at 65% 45%, rgba(255,255,255,0.9) 0%, rgba(254,251,241,0.8) 40%, rgba(235,217,191,0.95) 100%),
-    linear-gradient(135deg, rgba(186, 104, 200, 0.25) 0%, rgba(224, 190, 228, 0.05) 60%);
-  box-shadow: 
-    inset -1px -2px 4px rgba(121, 85, 72, 0.15),
-    inset 2px 2px 3px rgba(255, 255, 255, 0.8),
-    1px 2px 4px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  top: 11px;
+  left: calc(50% - 4.5px);
+  width: 9px;
+  height: 9px;
+  background: radial-gradient(circle at 35% 35%, #84533c 0%, #4a2717 60%, #200d05 100%);
+  border-radius: 50%;
+  box-shadow: inset -1px -1px 3px rgba(0, 0, 0, 0.6), 1px 2px 3px rgba(0, 0, 0, 0.2);
+  z-index: 4;
+}
+
+/* Overlapping Triangular Buds (Sepals) */
+.sepalBack {
+  position: absolute;
+  top: 9px;
+  left: calc(50% - 3px);
+  width: 6px;
+  height: 8px;
+  background: linear-gradient(to bottom, #30170c, #200d05);
+  border-radius: 50% 50% 20% 20%;
+  transform: scaleY(1.2);
   z-index: 2;
 }
 
-/* --- PAPERY SKIN STRIPE DETAILS --- */
-.stripe1 {
+.sepalLeft {
   position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  border-right: 1.5px solid rgba(160, 100, 180, 0.28);
-  transform: scaleX(0.85) translateX(-2px);
-  filter: blur(0.3px);
-}
-
-.stripe2 {
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  border-right: 1px dashed rgba(180, 130, 190, 0.22);
-  transform: scaleX(0.6) translateX(-4px) rotate(3deg);
-}
-
-/* --- 3D GLOSS HIGHLIGHT --- */
-.highlight {
-  position: absolute;
-  top: 3px;
-  left: 12px;
-  width: 6px;
-  height: 10px;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  transform: rotate(-20deg);
-  filter: blur(1px);
-}
-
-/* --- DRIED PAPERY TIP/TAIL --- */
-.tip {
-  position: absolute;
-  top: 3px;
-  right: 15px;
-  width: 7px;
-  height: 11px;
-  background: linear-gradient(140deg, #5c4327 0%, #a1825d 50%, #e3ceaf 100%);
-  /* Naturally twisted and tapered tip */
-  border-radius: 0% 100% 15% 100% / 0% 100% 0% 100%;
-  transform: rotate(-10deg) skewX(-15deg);
+  top: 12px;
+  left: calc(50% - 7px);
+  width: 5px;
+  height: 9px;
+  background: linear-gradient(135deg, #663d29 0%, #351a0e 70%, #1c0a03 100%);
+  border-radius: 100% 0 10% 80%;
+  transform: rotate(-30deg);
+  transform-origin: bottom right;
+  box-shadow: -1px 1px 1px rgba(0,0,0,0.15);
   z-index: 3;
-  box-shadow: 0.5px 1px 1.5px rgba(0,0,0,0.15);
 }
 
-.tipDetail {
+.sepalRight {
   position: absolute;
-  top: 1px;
-  right: 16px;
-  width: 2px;
-  height: 8px;
-  background: #3e2b17;
-  border-radius: 50%;
-  transform: rotate(-5deg);
-  z-index: 4;
-  opacity: 0.85;
+  top: 12px;
+  right: calc(50% - 7px);
+  width: 5px;
+  height: 9px;
+  background: linear-gradient(225deg, #663d29 0%, #351a0e 70%, #1c0a03 100%);
+  border-radius: 0 100% 80% 10%;
+  transform: rotate(30deg);
+  transform-origin: bottom left;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.15);
+  z-index: 3;
 }
 
-/* --- ROOT ATTACHMENT --- */
-.root {
+.sepalFront {
   position: absolute;
-  bottom: 2px;
-  left: 4px;
+  top: 15px;
+  left: calc(50% - 3.5px);
   width: 7px;
-  height: 5px;
-  background: radial-gradient(circle at center, #7a6348 20%, #4a3824 80%);
-  border-radius: 50% 30% 40% 50%;
-  transform: rotate(25deg);
-  border-top: 1px solid rgba(255,255,255,0.2);
-  z-index: 1;
-  box-shadow: inset 0 -1px 2px rgba(0,0,0,0.4);
+  height: 8px;
+  background: linear-gradient(to bottom, #7a4831 0%, #4a2717 60%, #2b1307 100%);
+  border-radius: 10% 10% 80% 80%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.1);
+  z-index: 5;
 }

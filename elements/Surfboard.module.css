@@ -1,4 +1,4 @@
-.canvas {
+.wrapper {
   position: relative;
   width: 48px;
   height: 48px;
@@ -7,52 +7,31 @@
   align-items: center;
 }
 
-/* --- SOFT DEPTH SHADOW --- */
+/* --- SHADOW --- */
 .shadow {
   position: absolute;
   width: 10px;
-  height: 40px;
+  height: 38px;
   background: rgba(0, 0, 0, 0.18);
-  border-radius: 50% 50% 35% 35% / 80% 80% 20% 20%;
+  border-radius: 50% 50% 35% 35% / 60% 60% 40% 40%;
   filter: blur(2px);
-  transform: rotate(20deg) translate(5px, 3px);
+  transform: rotate(125deg) translate(4px, 4px);
   z-index: 1;
 }
 
-/* --- ROTATION WRAPPER --- */
-.surfboardContainer {
+/* --- SURFBOARD BODY --- */
+.boardBody {
   position: absolute;
-  width: 16px;
-  height: 44px;
-  transform: rotate(20deg);
-  z-index: 2;
-}
-
-/* --- THE FIN (PEEKING FROM BEHIND) --- */
-.fin {
-  position: absolute;
-  bottom: 0px;
-  left: 3px;
-  width: 3px;
-  height: 6px;
-  background: #263238;
-  border-top-left-radius: 100%;
-  transform: rotate(-15deg);
-  z-index: 1;
-}
-
-/* --- MAIN BOARD SHAPE & FIBERGLASS GLOSS --- */
-.board {
-  position: absolute;
-  left: 1px;
-  top: 0;
-  width: 14px;
+  width: 12px;
   height: 42px;
-  background: #faf9f6; /* Ivory/Cream White Base */
-  border-radius: 50% 50% 35% 35% / 80% 80% 20% 20%;
-  box-shadow:
-    inset -1px -2px 3px rgba(0, 0, 0, 0.12),
-    inset 1px 1px 2px rgba(255, 255, 255, 0.8);
+  background: linear-gradient(to right, #f7f7f2 0%, #ecebe4 100%);
+  /* Pointy nose at top, tapered tail at bottom */
+  border-radius: 50% 50% 35% 35% / 60% 60% 40% 40%;
+  box-shadow: 
+    inset -1px -1px 3px rgba(0,0,0,0.1),
+    inset 1px 1px 2px rgba(255,255,255,0.8),
+    0.5px 1px 2px rgba(0,0,0,0.15);
+  transform: rotate(125deg);
   overflow: hidden;
   z-index: 2;
 }
@@ -64,58 +43,75 @@
   top: 0;
   width: 1px;
   height: 100%;
-  background: #8d6e63; /* Natural wood tone */
-  opacity: 0.85;
+  background: #a17c58; /* Warm wood color */
+  opacity: 0.8;
   z-index: 4;
 }
 
-/* --- RETRO ACCENT STRIPES --- */
-.stripeTeal {
-  position: absolute;
-  left: -10px;
-  top: 14px;
-  width: 30px;
-  height: 8px;
-  background: #00acc1; /* Cool retro teal */
-  transform: rotate(-35deg);
-  z-index: 3;
-}
-
+/* --- DECAL STRIPES --- */
 .stripeOrange {
   position: absolute;
-  left: -10px;
-  top: 20px;
-  width: 30px;
-  height: 6px;
-  background: #ff5722; /* Vivid retro orange */
-  transform: rotate(-35deg);
+  top: 10px;
+  left: -2px;
+  width: 16px;
+  height: 14px;
+  background: #ff5722; /* Retro Orange */
+  transform: skewY(-15deg);
+  opacity: 0.95;
   z-index: 3;
 }
 
 .stripeYellow {
   position: absolute;
-  left: -10px;
-  top: 25px;
-  width: 30px;
-  height: 5px;
-  background: #ffb300; /* Warm retro gold */
-  transform: rotate(-35deg);
+  top: 21px;
+  left: -2px;
+  width: 16px;
+  height: 6px;
+  background: #ffb300; /* Warm Yellow */
+  transform: skewY(-15deg);
+  opacity: 0.95;
   z-index: 3;
 }
 
-/* --- GLOSS / REFLECTION EFFECT --- */
+/* --- GRIP PAD --- */
+.gripPad {
+  position: absolute;
+  bottom: 4px;
+  left: calc(50% - 3px);
+  width: 6px;
+  height: 5px;
+  background: #37474f;
+  border-radius: 1px;
+  opacity: 0.9;
+  z-index: 5;
+}
+
+/* --- LEASH PLUG --- */
+.leashPlug {
+  position: absolute;
+  bottom: 2px;
+  left: calc(50% - 1px);
+  width: 2px;
+  height: 2px;
+  background: #212121;
+  border-radius: 50%;
+  z-index: 5;
+}
+
+/* --- FIBERGLASS GLOSS --- */
 .gloss {
   position: absolute;
-  left: 1px;
-  top: 1px;
-  width: 4px;
-  height: 38px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.45) 0%,
-    rgba(255, 255, 255, 0) 100%
+    105deg, 
+    rgba(255,255,255,0.45) 0%,
+    rgba(255,255,255,0.45) 25%,
+    rgba(255,255,255,0) 26%,
+    rgba(255,255,255,0) 100%
   );
-  border-radius: 80% 20% 20% 80% / 50%;
   pointer-events: none;
-  z-index: 5;
+  z-index: 6;
 }

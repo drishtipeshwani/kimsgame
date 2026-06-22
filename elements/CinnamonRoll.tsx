@@ -1,40 +1,31 @@
 import styles from './CinnamonRoll.module.css';
-import shared from './shared.module.css';
+import shared from "./shared.module.css";
 
 export default function CinnamonRoll() {
   return (
-    <div className={shared.element} role="img" aria-label="Cinnamon Roll">
-      <div className={styles.rollWrapper}>
-        {/* Soft shadow beneath the pastry */}
+    <div className={shared.element}>
+      <div 
+        className={styles.rollWrapper} 
+        role="img" 
+        aria-label="A delicious freshly baked cinnamon roll"
+      >
+        {/* Soft floor shadow beneath the roll */}
         <div className={styles.shadow}></div>
-        
-        {/* Outer Pastry Layer */}
-        <div className={styles.pastryBase}>
-          {/* Outer Spiral Crevice */}
-          <div className={styles.spiralOuter}></div>
+
+        {/* Main Bun Body & Layers */}
+        <div className={styles.bunBase}>
+          {/* Outer Cinnamon Swirl */}
+          <div className={styles.swirlOuter}></div>
           
-          {/* Middle Pastry Layer */}
-          <div className={styles.pastryMiddle}>
-            {/* Middle Spiral Crevice */}
-            <div className={styles.spiralMiddle}></div>
-            
-            {/* Inner Pastry Layer */}
-            <div className={styles.pastryInner}>
-              {/* Center Core */}
-              <div className={styles.pastryCenter}></div>
-            </div>
-          </div>
+          {/* Middle Dough Ring */}
+          <div className={styles.doughMiddle}></div>
+          
+          {/* Inner Cinnamon Swirl */}
+          <div className={styles.swirlInner}></div>
+          
+          {/* Center Dough Core */}
+          <div className={styles.doughCenter}></div>
         </div>
-
-        {/* Melted Frosting Layers */}
-        <div className={styles.frostingBack}></div>
-        <div className={styles.frostingMain}></div>
-        <div className={styles.frostingDrip}></div>
-        <div className={styles.frostingCenter}></div>
-
-        {/* Cinnamon Powder Dusting */}
-        <div className={styles.cinnamonDust1}></div>
-        <div className={styles.cinnamonDust2}></div>
       </div>
     </div>
   );

@@ -3,29 +3,32 @@ import shared from "./shared.module.css";
 
 export default function Surfboard() {
   return (
-    <div className={shared.element} role="img" aria-label="Sleek retro surfboard">
-      <div className={styles.canvas}>
-        {/* Blurred drop shadow grounded under the surfboard */}
+    <div className={shared.element}>
+      <div 
+        className={styles.wrapper} 
+        role="img" 
+        aria-label="A realistic retro surfboard slanted downwards"
+      >
+        {/* Soft floating shadow underneath */}
         <div className={styles.shadow}></div>
-
-        {/* Main Surfboard Container (controls rotation/placement) */}
-        <div className={styles.surfboardContainer}>
-          {/* Bottom Fin behind the board */}
-          <div className={styles.fin}></div>
-
-          {/* Surfboard Body */}
-          <div className={styles.board}>
-            {/* Retro Colored Stripes */}
-            <div className={styles.stripeTeal}></div>
-            <div className={styles.stripeOrange}></div>
-            <div className={styles.stripeYellow}></div>
-
-            {/* Center Wooden Stringer */}
-            <div className={styles.stringer}></div>
-
-            {/* Glossy highlight/reflection overlay */}
-            <div className={styles.gloss}></div>
-          </div>
+        
+        {/* Main Surfboard Body */}
+        <div className={styles.boardBody}>
+          {/* Colored Retro Stripe Decals */}
+          <div className={styles.stripeOrange}></div>
+          <div className={styles.stripeYellow}></div>
+          
+          {/* Wooden Stringer (Center Spine) */}
+          <div className={styles.stringer}></div>
+          
+          {/* Tail Grip Pad */}
+          <div className={styles.gripPad}></div>
+          
+          {/* Leash Plug */}
+          <div className={styles.leashPlug}></div>
+          
+          {/* Glossy Fiberglass Reflection */}
+          <div className={styles.gloss}></div>
         </div>
       </div>
     </div>

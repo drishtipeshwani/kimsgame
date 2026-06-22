@@ -1,53 +1,56 @@
-import styles from './ApplePie.module.css';
+import styles from "./ApplePie.module.css";
 import shared from "./shared.module.css";
 
 export default function ApplePie() {
   return (
-    <div className={shared.element}>
-      <div 
-        className={styles.pieWrapper} 
-        role="img" 
-        aria-label="A golden-brown baked apple pie in a tin pan"
-      >
-        {/* Soft shadow under the tin */}
-        <div className={styles.shadow}></div>
-        
-        {/* Silver Pie Pan */}
-        <div className={styles.pan}></div>
+    <div className={shared.element} role="img" aria-label="A freshly baked hot apple pie in a red ceramic dish">
+      <div className={styles.pieWrapper}>
+        {/* Hot Rising Steam */}
+        <div className={styles.steamLeft}></div>
+        <div className={styles.steamRight}></div>
 
-        {/* Scalloped/Crimped Crust Edge */}
-        <div className={styles.crimpContainer}>
-          {Array.from({ length: 12 }).map((_, i) => (
-            <div
-              key={i}
-              className={styles.crimp}
-              style={{ transform: `rotate(${i * 30}deg) translate(0, -17px)` }}
-            />
-          ))}
-        </div>
+        {/* Under-dish Shadow */}
+        <div className={styles.dishShadow}></div>
 
-        {/* Main Baked Crust Surface */}
-        <div className={styles.crustSurface}>
-          {/* Subtle scoring line around center */}
-          <div className={styles.crustDetail}></div>
+        {/* Ceramic Pie Dish Outer Bottom */}
+        <div className={styles.dishBase}></div>
 
-          {/* Caramelized Apple Steam Vents */}
-          <div className={styles.ventContainer}>
-            <div className={styles.ventCenter}></div>
-            {Array.from({ length: 5 }).map((_, i) => (
-              <div
-                key={i}
-                className={styles.vent}
-                style={{ transform: `rotate(${i * 72}deg) translate(0, -4px)` }}
-              />
-            ))}
+        {/* Ceramic Rim of the Dish */}
+        <div className={styles.dishRim}>
+          {/* Scalloped Crust Edge (Crimped Crust) */}
+          <div className={styles.scallopContainer}>
+            <div className={`${styles.scallop} ${styles.s1}`}></div>
+            <div className={`${styles.scallop} ${styles.s2}`}></div>
+            <div className={`${styles.scallop} ${styles.s3}`}></div>
+            <div className={`${styles.scallop} ${styles.s4}`}></div>
+            <div className={`${styles.scallop} ${styles.s5}`}></div>
+            <div className={`${styles.scallop} ${styles.s6}`}></div>
+            <div className={`${styles.scallop} ${styles.s7}`}></div>
+            <div className={`${styles.scallop} ${styles.s8}`}></div>
+            <div className={`${styles.scallop} ${styles.s9}`}></div>
+            <div className={`${styles.scallop} ${styles.s10}`}></div>
           </div>
 
-          {/* Decorative Pastry Leaf on top */}
-          <div className={styles.pastryLeaf}></div>
+          {/* Main Pie Inner Surface (Crust Base & Filling) */}
+          <div className={styles.crustBase}>
+            <div className={styles.fillingContainer}>
+              {/* Delicious Amber Apple Filling Background */}
+              <div className={styles.filling}></div>
 
-          {/* Sweet Glaze Highlight */}
-          <div className={styles.glaze}></div>
+              {/* Horizontal Lattice Strips */}
+              <div className={`${styles.lattice} ${styles.horizontal} ${styles.h1}`}></div>
+              <div className={`${styles.lattice} ${styles.horizontal} ${styles.h2}`}></div>
+              <div className={`${styles.lattice} ${styles.horizontal} ${styles.h3}`}></div>
+
+              {/* Vertical Lattice Strips */}
+              <div className={`${styles.lattice} ${styles.vertical} ${styles.v1}`}></div>
+              <div className={`${styles.lattice} ${styles.vertical} ${styles.v2}`}></div>
+              <div className={`${styles.lattice} ${styles.vertical} ${styles.v3}`}></div>
+
+              {/* Glossy Glaze Highlight */}
+              <div className={styles.glazeHighlight}></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

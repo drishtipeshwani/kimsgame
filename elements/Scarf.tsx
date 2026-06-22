@@ -4,36 +4,29 @@ import shared from "./shared.module.css";
 export default function Scarf() {
   return (
     <div className={shared.element}>
-      <div className={styles.scarfWrapper} role="img" aria-label="Cozy striped winter scarf">
-        {/* Soft shadow below the scarf tails */}
+      <div 
+        className={styles.scarfWrapper} 
+        role="img" 
+        aria-label="A cozy pink and white striped scarf"
+      >
+        {/* Soft shadow underneath the scarf */}
         <div className={styles.shadow}></div>
         
-        {/* Dark inner fold representing the neck space */}
-        <div className={styles.neckInner}></div>
-        
-        {/* Left hanging tail (in the background) */}
-        <div className={styles.tailLeft}>
-          <div className={styles.fringesLeft}>
-            <div className={styles.fringe}></div>
-            <div className={styles.fringe}></div>
-            <div className={styles.fringe}></div>
-          </div>
-        </div>
-        
-        {/* Main wrapped loop around the neck */}
+        {/* Back neck loop */}
         <div className={styles.neckLoop}></div>
         
-        {/* Overlapping knot/intersection */}
-        <div className={styles.knot}></div>
-        
-        {/* Right hanging tail (in the foreground) */}
-        <div className={styles.tailRight}>
-          <div className={styles.fringesRight}>
-            <div className={styles.fringe}></div>
-            <div className={styles.fringe}></div>
-            <div className={styles.fringe}></div>
-          </div>
+        {/* Left Tail */}
+        <div className={styles.tailLeft}>
+          <div className={styles.fringe}></div>
         </div>
+        
+        {/* Right Tail */}
+        <div className={styles.tailRight}>
+          <div className={styles.fringe}></div>
+        </div>
+        
+        {/* Overlapping Knot / Fold */}
+        <div className={styles.knot}></div>
       </div>
     </div>
   );

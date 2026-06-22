@@ -3,28 +3,26 @@ import shared from "./shared.module.css";
 
 export default function Clove() {
   return (
-    <div className={shared.element}>
-      <div className={styles.cloveWrapper} role="img" aria-label="Garlic Clove">
-        {/* Diffused floor shadow */}
+    <div className={shared.element} role="img" aria-label="A single dried clove spice">
+      <div className={styles.cloveWrapper}>
+        {/* Ground shadow */}
         <div className={styles.shadow}></div>
         
-        {/* Main Clove Container */}
-        <div className={styles.clove}> 
-          {/* Root pad attachment */}
-          <div className={styles.root}></div>
+        {/* The entire clove assembly, angled for realism */}
+        <div className={styles.clove}>
+          {/* Cylindrical stem */}
+          <div className={styles.stem}></div>
           
-          {/* Main plump body */}
-          <div className={styles.body}>
-            {/* Papery striations */}
-            <div className={styles.stripe1}></div>
-            <div className={styles.stripe2}></div>
-            {/* Glossy highlight overlay */}
-            <div className={styles.highlight}></div>
-          </div>
+          {/* 4 Overlapping Triangular Buds / Sepals */}
+          <div className={styles.sepalBack}></div>
+          <div className={styles.sepalLeft}></div>
+          <div className={styles.sepalRight}></div>
           
-          {/* Pointy dried tip */}
-          <div className={styles.tip}></div>
-          <div className={styles.tipDetail}></div>
+          {/* Central spherical ball (unopened flower bud corolla) */}
+          <div className={styles.corolla}></div>
+          
+          {/* Front overlapping bud */}
+          <div className={styles.sepalFront}></div>
         </div>
       </div>
     </div>

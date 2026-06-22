@@ -7,130 +7,176 @@
   align-items: center;
 }
 
-/* --- DROP SHADOW --- */
-.shadow {
+/* --- STEAM --- */
+.steamLeft,
+.steamRight {
   position: absolute;
-  bottom: 1px;
-  width: 42px;
-  height: 10px;
-  background: rgba(0, 0, 0, 0.35);
+  width: 4px;
+  background: rgba(255, 255, 255, 0.4);
   border-radius: 50%;
-  filter: blur(2px);
+  filter: blur(1.5px);
   z-index: 1;
 }
 
-/* --- THE METAL PIE DISH --- */
-.pan {
+.steamLeft {
+  left: 18px;
+  bottom: 30px;
+  height: 12px;
+  transform: rotate(-10deg);
+  opacity: 0.5;
+  animation: floatSteam 3s infinite ease-in-out;
+}
+
+.steamRight {
+  right: 18px;
+  bottom: 32px;
+  height: 10px;
+  transform: rotate(8deg);
+  opacity: 0.6;
+  animation: floatSteam 2.5s infinite ease-in-out 0.5s;
+}
+
+@keyframes floatSteam {
+  0%, 100% { transform: translateY(0) rotate(-5deg) scale(0.9); opacity: 0.3; }
+  50% { transform: translateY(-3px) rotate(5deg) scale(1.1); opacity: 0.6; }
+}
+
+/* --- SHADOW --- */
+.dishShadow {
   position: absolute;
-  width: 42px;
-  height: 42px;
-  background: linear-gradient(135deg, #f5f5f5 0%, #b0bec5 50%, #78909c 100%);
+  bottom: 2px;
+  width: 40px;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.35);
   border-radius: 50%;
-  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.8), 0 2px 4px rgba(0, 0, 0, 0.25);
+  filter: blur(1.5px);
+  z-index: 0;
+}
+
+/* --- PIE DISH --- */
+.dishBase {
+  position: absolute;
+  bottom: 4px;
+  width: 42px;
+  height: 22px;
+  background: linear-gradient(to bottom, #d32f2f, #990000);
+  border-radius: 0 0 16px 16px;
+  box-shadow: inset 0 -3px 4px rgba(0, 0, 0, 0.4);
   z-index: 2;
 }
 
-/* --- CRIMPED EDGES CONTAINER --- */
-.crimpContainer {
+.dishRim {
   position: absolute;
-  width: 42px;
-  height: 42px;
+  bottom: 14px;
+  width: 44px;
+  height: 24px;
+  background: linear-gradient(135deg, #f44336 0%, #b71c1c 100%);
+  border-radius: 50%;
+  border-bottom: 2px solid #7f0000;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.3);
   z-index: 3;
   display: flex;
   justify-content: center;
   align-items: center;
-  pointer-events: none;
 }
 
-/* Individual decorative crust crimps */
-.crimp {
+/* --- SCALLOPED CRUST --- */
+.scallopContainer {
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  border-radius: 50%;
+  z-index: 4;
+}
+
+.scallop {
   position: absolute;
   width: 8px;
   height: 8px;
-  background: linear-gradient(135deg, #ffe082 0%, #ffb300 60%, #a1887f 100%);
+  background: linear-gradient(135deg, #f0be5e 0%, #d28c28 100%);
   border-radius: 50%;
-  box-shadow: inset -1px -1px 2px rgba(109, 76, 65, 0.4), 0 1px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: inset -1px -1px 2px rgba(0,0,0,0.2), 0 1px 1px rgba(0,0,0,0.15);
 }
 
-/* --- MAIN BAKED CRUST SURFACE --- */
-.crustSurface {
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  background: radial-gradient(circle, #ffe082 0%, #ffca28 40%, #e65100 85%, #8d6e63 100%);
-  border-radius: 50%;
-  z-index: 4;
-  box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+/* Positioning the scallops in an oval contour */
+.s1 { top: -2px; left: 16px; }
+.s2 { top: 0px; left: 7px; }
+.s3 { top: 0px; right: 7px; }
+.s4 { top: 4px; left: 0px; }
+.s5 { top: 4px; right: 0px; }
+.s6 { top: 10px; left: -1px; }
+.s7 { top: 10px; right: -1px; }
+.s8 { top: 14px; left: 6px; }
+.s9 { top: 14px; right: 6px; }
+.s10 { top: 15px; left: 16px; }
 
-/* Inner decorative pastry indentation ring */
-.crustDetail {
+/* --- CRUST BASE & FILLING CONTAINER --- */
+.crustBase {
   position: absolute;
-  width: 24px;
-  height: 24px;
-  border: 1px dashed rgba(141, 110, 99, 0.45);
+  width: 38px;
+  height: 18px;
+  background: #d28c28;
   border-radius: 50%;
-  pointer-events: none;
-}
-
-/* --- STEAM VENTS (SPICED FILLING INSIDE) --- */
-.ventContainer {
-  position: absolute;
-  width: 14px;
-  height: 14px;
   z-index: 5;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
-.ventCenter {
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  background: #3e2723;
+.fillingContainer {
+  position: relative;
+  width: 34px;
+  height: 14px;
   border-radius: 50%;
-  box-shadow: inset 0 0.5px 1px rgba(0, 0, 0, 0.9);
+  background: #5d3a1a; /* Dark spicy brown filling */
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-.vent {
+.filling {
   position: absolute;
-  width: 1.5px;
-  height: 4px;
-  background: #3e2723; /* Deep, rich apple pie filling color */
-  border-radius: 50% / 30%;
-  box-shadow: inset 0 0.5px 1px rgba(0, 0, 0, 0.9), 0.5px 0.5px 0.5px rgba(255, 255, 255, 0.25);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #8d5524 10%, #4a2810 90%);
+  opacity: 0.95;
 }
 
-/* --- DECORATIVE PASTRY LEAF --- */
-.pastryLeaf {
+/* --- LATTICE STRIPS --- */
+.lattice {
   position: absolute;
-  width: 6px;
-  height: 4px;
-  background: linear-gradient(135deg, #ffe082, #ffb300);
-  border-radius: 100% 0 100% 0;
-  box-shadow: 0.5px 1px 1px rgba(0,0,0,0.15);
-  border-bottom: 0.5px solid #b17a23;
-  top: 6px;
-  right: 6px;
-  transform: rotate(-15deg);
-  z-index: 6;
+  background: linear-gradient(to bottom, #f5c26b 20%, #d28c28 80%);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.4);
 }
 
-/* --- SHINY GLAZE / SUGAR CRYSTALS --- */
-.glaze {
+.horizontal {
+  height: 2.5px;
+  width: 120%;
+  left: -10%;
+}
+
+.h1 { top: 20%; }
+.h2 { top: 46%; }
+.h3 { top: 72%; }
+
+.vertical {
+  width: 2.5px;
+  height: 120%;
+  top: -10%;
+}
+
+.v1 { left: 22%; }
+.v2 { left: 47%; }
+.v3 { left: 72%; }
+
+/* --- GLAZE HIGHLIGHT --- */
+.glazeHighlight {
   position: absolute;
-  top: 3px;
+  top: 1px;
   left: 6px;
-  width: 10px;
-  height: 3px;
-  background: rgba(255, 255, 255, 0.4);
+  width: 22px;
+  height: 5px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
   border-radius: 50%;
-  transform: rotate(-30deg);
-  filter: blur(0.5px);
   pointer-events: none;
-  z-index: 7;
 }
